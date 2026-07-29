@@ -173,20 +173,35 @@ tailwind.config = {
     overflow: hidden;
     transition: max-height 0.35s ease;
   }
-  #mobile-menu.open { max-height: 320px; }
+  #mobile-menu.open { max-height: 420px; }
 
-  #cv-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 100;
+  .lang-switch {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background: rgba(1, 15, 31, 0.72);
-    backdrop-filter: blur(8px);
+    gap: 2px;
+    padding: 3px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
   }
-  #cv-modal.open { display: flex; }
+  .lang-btn {
+    min-width: 40px;
+    padding: 6px 10px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #c7c4d8;
+    transition: all 0.2s ease;
+  }
+  .lang-btn.active {
+    background: #c3c0ff;
+    color: #1d00a5;
+  }
+  .lang-btn:not(.active):hover {
+    color: #d4e4fa;
+    background: rgba(255, 255, 255, 0.06);
+  }
 
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: #051424; }
@@ -205,14 +220,17 @@ tailwind.config = {
   <div class="max-w-container-max mx-auto px-5 md:px-margin-desktop flex justify-between items-center h-20">
     <a href="#hero" class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tighter">SCD</a>
     <div class="hidden md:flex space-x-gutter items-center">
-      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#hero">Home</a>
-      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#projects">Projects</a>
-      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#about">About</a>
-      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#contact">Contact</a>
-      <button type="button" data-cv-open
-              class="ml-4 bg-primary text-on-primary px-6 py-2 rounded-full font-bold hover:scale-95 transition-transform">
-        Resume
-      </button>
+      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#hero" data-i18n="nav.home">Home</a>
+      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#projects" data-i18n="nav.projects">Projects</a>
+      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#about" data-i18n="nav.about">About</a>
+      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#contact" data-i18n="nav.contact">Contact</a>
+      <button type="button" id="resume-btn"
+              class="ml-4 bg-primary text-on-primary px-6 py-2 rounded-full font-bold hover:scale-95 transition-transform"
+              data-i18n="nav.resume">Resume</button>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang="tr">TR</button>
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      </div>
     </div>
     <button id="menu-toggle" class="md:hidden text-on-surface p-2" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
       <span class="material-symbols-outlined" id="menu-icon">menu</span>
@@ -220,14 +238,17 @@ tailwind.config = {
   </div>
   <div id="mobile-menu" class="md:hidden border-t border-white/10 bg-surface/95 backdrop-blur-xl">
     <div class="flex flex-col px-5 py-4 space-y-4">
-      <a class="text-on-surface font-body-md" href="#hero" data-mobile-link>Home</a>
-      <a class="text-on-surface font-body-md" href="#projects" data-mobile-link>Projects</a>
-      <a class="text-on-surface font-body-md" href="#about" data-mobile-link>About</a>
-      <a class="text-on-surface font-body-md" href="#contact" data-mobile-link>Contact</a>
-      <button type="button" data-cv-open
-              class="bg-primary text-on-primary px-6 py-3 rounded-full font-bold text-center w-full">
-        Resume
-      </button>
+      <a class="text-on-surface font-body-md" href="#hero" data-mobile-link data-i18n="nav.home">Home</a>
+      <a class="text-on-surface font-body-md" href="#projects" data-mobile-link data-i18n="nav.projects">Projects</a>
+      <a class="text-on-surface font-body-md" href="#about" data-mobile-link data-i18n="nav.about">About</a>
+      <a class="text-on-surface font-body-md" href="#contact" data-mobile-link data-i18n="nav.contact">Contact</a>
+      <button type="button" id="resume-btn-mobile"
+              class="bg-primary text-on-primary px-6 py-3 rounded-full font-bold text-center w-full"
+              data-i18n="nav.resume">Resume</button>
+      <div class="lang-switch self-center" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang="tr">TR</button>
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      </div>
     </div>
   </div>
 </nav>
@@ -242,15 +263,15 @@ tailwind.config = {
       <div class="flex flex-col justify-center space-y-stack-sm fade-in-up">
         <div class="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 px-4 py-1 rounded-full w-fit">
           <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-          <span class="text-label-caps font-label-caps text-primary tracking-widest uppercase">Software Developer</span>
+          <span class="text-label-caps font-label-caps text-primary tracking-widest uppercase" data-i18n="hero.badge">Software Developer</span>
         </div>
         <h1 class="text-display-mobile md:text-display font-display text-on-surface leading-tight">
           Semahattin <span class="gradient-text">Can Doruk</span>
         </h1>
-        <p class="text-headline-sm font-headline-sm text-on-surface-variant">
+        <p class="text-headline-sm font-headline-sm text-on-surface-variant" data-i18n="hero.role">
           Software Developer · Flutter • C# • Embedded Systems
         </p>
-        <p class="text-body-lg font-body-lg text-on-surface-variant/80 max-w-xl">
+        <p class="text-body-lg font-body-lg text-on-surface-variant/80 max-w-xl" data-i18n="hero.lead">
           End-to-end solutions across mobile, desktop, and embedded systems — focused on system design, multithreading, and hardware–software integration.
         </p>
         <div class="flex flex-wrap gap-2 py-stack-sm">
@@ -268,10 +289,10 @@ tailwind.config = {
         </div>
         <div class="flex flex-wrap gap-4 pt-stack-sm">
           <a class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold flex items-center group" href="#projects">
-            View Projects
+            <span data-i18n="hero.ctaProjects">View Projects</span>
             <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </a>
-          <a class="bg-white/5 border border-white/10 text-on-surface px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all" href="#contact">
+          <a class="bg-white/5 border border-white/10 text-on-surface px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all" href="#contact" data-i18n="hero.ctaContact">
             Contact Me
           </a>
         </div>
@@ -306,7 +327,7 @@ tailwind.config = {
                 <span class="material-symbols-outlined text-primary">flutter_dash</span>
               </div>
               <div>
-                <p class="text-label-caps font-label-caps text-on-surface-variant">Top Language</p>
+                <p class="text-label-caps font-label-caps text-on-surface-variant" data-i18n="hero.topLang">Top Language</p>
                 <p class="font-bold text-on-surface">Dart / Flutter</p>
               </div>
             </div>
@@ -321,11 +342,11 @@ tailwind.config = {
     <div class="max-w-container-max mx-auto px-5 md:px-margin-desktop">
       <div class="flex justify-between items-end mb-stack-lg fade-in-up">
         <div>
-          <h2 class="text-headline-lg font-headline-lg text-on-surface">Featured <span class="gradient-text">Projects</span></h2>
-          <p class="text-body-md text-on-surface-variant max-w-md mt-2">Innovative solutions across mobile, web, and hardware ecosystems.</p>
+          <h2 class="text-headline-lg font-headline-lg text-on-surface" data-i18n-html="projects.title">Featured <span class="gradient-text">Projects</span></h2>
+          <p class="text-body-md text-on-surface-variant max-w-md mt-2" data-i18n="projects.sub">Innovative solutions across mobile, web, and hardware ecosystems.</p>
         </div>
         <div class="hidden md:block">
-          <span class="text-label-caps text-outline">SCROLL TO DISCOVER</span>
+          <span class="text-label-caps text-outline" data-i18n="projects.scroll">SCROLL TO DISCOVER</span>
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
@@ -342,7 +363,7 @@ tailwind.config = {
               <h3 class="text-headline-sm font-headline-sm text-on-surface">QuizArea</h3>
               <span class="material-symbols-outlined text-primary">arrow_outward</span>
             </div>
-            <p class="text-body-md text-on-surface-variant mb-4">Gamified English vocabulary learning app with quiz exercises, progress tracking, and user authentication.</p>
+            <p class="text-body-md text-on-surface-variant mb-4" data-i18n="p.quizarea">Gamified English vocabulary learning app with quiz exercises, progress tracking, and user authentication.</p>
             <div class="flex flex-wrap gap-2 mt-auto">
               <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Flutter</span>
               <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Firebase</span>
@@ -363,7 +384,7 @@ tailwind.config = {
               <h3 class="text-headline-sm font-headline-sm text-on-surface">AgroMora</h3>
               <span class="material-symbols-outlined text-primary">arrow_outward</span>
             </div>
-            <p class="text-body-md text-on-surface-variant mb-4">Mobile e-commerce application featuring role-based authorization.</p>
+            <p class="text-body-md text-on-surface-variant mb-4" data-i18n="p.agromora">Mobile e-commerce application featuring role-based authorization.</p>
             <div class="flex flex-wrap gap-2 mt-auto">
               <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Flutter</span>
               <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Supabase</span>
@@ -382,7 +403,7 @@ tailwind.config = {
             <div class="flex justify-between items-start mb-2">
               <h3 class="text-headline-sm font-headline-sm text-on-surface">SmartSprinkler</h3>
             </div>
-            <p class="text-body-md text-on-surface-variant mb-4">IoT irrigation prototype with ESP32 Wi-Fi AP setup, weekly watering schedules, and remote control via mobile app.</p>
+            <p class="text-body-md text-on-surface-variant mb-4" data-i18n="p.smartsprinkler">IoT irrigation prototype with ESP32 Wi-Fi AP setup, weekly watering schedules, and remote control via mobile app.</p>
             <div class="flex flex-wrap gap-2 mt-auto">
               <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Flutter</span>
               <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">ESP32</span>
@@ -403,7 +424,7 @@ tailwind.config = {
               <h3 class="text-headline-sm font-headline-sm text-on-surface">Voice2Note AI</h3>
               <span class="material-symbols-outlined text-primary">arrow_outward</span>
             </div>
-            <p class="text-body-md text-on-surface-variant mb-4">Note-taking app that converts speech to text via recording or file import, with server-based summarization, search, and PDF generation.</p>
+            <p class="text-body-md text-on-surface-variant mb-4" data-i18n="p.voice2note">Note-taking app that converts speech to text via recording or file import, with server-based summarization, search, and PDF generation.</p>
             <div class="flex flex-wrap gap-2 mt-auto">
               <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Flutter</span>
               <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">FastAPI</span>
@@ -424,7 +445,7 @@ tailwind.config = {
               <h3 class="text-headline-sm font-headline-sm text-on-surface">CrestBalance</h3>
               <span class="material-symbols-outlined text-primary">arrow_outward</span>
             </div>
-            <p class="text-body-md text-on-surface-variant mb-4">Erasmus-focused multi-currency budgeting, grant tracking, and group expense splitting with debt summaries and settlement.</p>
+            <p class="text-body-md text-on-surface-variant mb-4" data-i18n="p.crestbalance">Erasmus-focused multi-currency budgeting, grant tracking, and group expense splitting with debt summaries and settlement.</p>
             <div class="flex flex-wrap gap-2 mt-auto">
               <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Flutter</span>
               <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Supabase</span>
@@ -445,7 +466,7 @@ tailwind.config = {
               <h3 class="text-headline-sm font-headline-sm text-on-surface">BağışYap</h3>
               <span class="material-symbols-outlined text-primary">arrow_outward</span>
             </div>
-            <p class="text-body-md text-on-surface-variant mb-4">Mobile app listing official donation organizations in Turkey, with campaign browsing and contribution flows.</p>
+            <p class="text-body-md text-on-surface-variant mb-4" data-i18n="p.bagisyap">Mobile app listing official donation organizations in Turkey, with campaign browsing and contribution flows.</p>
             <div class="flex flex-wrap gap-2 mt-auto">
               <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Flutter</span>
               <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Supabase</span>
@@ -461,17 +482,17 @@ tailwind.config = {
   <section class="py-24 max-w-container-max mx-auto px-5 md:px-margin-desktop" id="about">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg">
       <div class="fade-in-up">
-        <h2 class="text-headline-lg font-headline-lg text-on-surface mb-stack-md">Professional <span class="gradient-text">Profile</span></h2>
+        <h2 class="text-headline-lg font-headline-lg text-on-surface mb-stack-md" data-i18n-html="about.title">Professional <span class="gradient-text">Profile</span></h2>
         <div class="space-y-stack-sm text-body-lg text-on-surface-variant">
-          <p>I deliver end-to-end solutions across mobile, desktop, and embedded systems, with a strong focus on system design and process optimization.</p>
-          <p>I have hands-on experience troubleshooting complex architectures, optimizing multithreaded structures, and ensuring seamless hardware–software integration.</p>
-          <p>B.Sc. student in Information Systems and Technologies at Muş Alparslan University (GPA 3.10 / 4.00).</p>
+          <p data-i18n="about.p1">I deliver end-to-end solutions across mobile, desktop, and embedded systems, with a strong focus on system design and process optimization.</p>
+          <p data-i18n="about.p2">I have hands-on experience troubleshooting complex architectures, optimizing multithreaded structures, and ensuring seamless hardware–software integration.</p>
+          <p data-i18n="about.p3">B.Sc. student in Information Systems and Technologies at Muş Alparslan University (GPA 3.10 / 4.00).</p>
         </div>
         <div class="mt-stack-lg space-y-4">
-          <h3 class="text-headline-sm font-headline-sm text-on-surface">Expertise</h3>
+          <h3 class="text-headline-sm font-headline-sm text-on-surface" data-i18n="about.expertise">Expertise</h3>
           <div class="space-y-6">
             <div>
-              <p class="text-label-caps font-label-caps text-primary mb-2">Mobile &amp; Desktop</p>
+              <p class="text-label-caps font-label-caps text-primary mb-2" data-i18n="about.exp1">Mobile &amp; Desktop</p>
               <div class="flex flex-wrap gap-2">
                 <span class="skill-chip">Flutter</span>
                 <span class="skill-chip">Dart</span>
@@ -483,7 +504,7 @@ tailwind.config = {
               </div>
             </div>
             <div>
-              <p class="text-label-caps font-label-caps text-primary mb-2">Backend &amp; APIs</p>
+              <p class="text-label-caps font-label-caps text-primary mb-2" data-i18n="about.exp2">Backend &amp; APIs</p>
               <div class="flex flex-wrap gap-2">
                 <span class="skill-chip">C#</span>
                 <span class="skill-chip">Python</span>
@@ -495,7 +516,7 @@ tailwind.config = {
               </div>
             </div>
             <div>
-              <p class="text-label-caps font-label-caps text-primary mb-2">Embedded &amp; Concepts</p>
+              <p class="text-label-caps font-label-caps text-primary mb-2" data-i18n="about.exp3">Embedded &amp; Concepts</p>
               <div class="flex flex-wrap gap-2">
                 <span class="skill-chip">ESP32</span>
                 <span class="skill-chip">Raspberry Pi</span>
@@ -510,41 +531,41 @@ tailwind.config = {
         </div>
       </div>
       <div class="space-y-stack-md fade-in-up">
-        <h3 class="text-headline-sm font-headline-sm text-on-surface">Journey</h3>
+        <h3 class="text-headline-sm font-headline-sm text-on-surface" data-i18n="journey.title">Journey</h3>
         <div class="relative pl-8 space-y-stack-md border-l border-white/10 ml-2">
           <div class="relative">
             <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-primary/20"></div>
             <div>
-              <span class="text-label-caps text-primary">Jul 2025 – Mar 2026</span>
-              <h4 class="text-body-lg font-bold text-on-surface">Software Developer — SANCAKTAR Mekatronik</h4>
-              <p class="text-body-md text-on-surface-variant">Optimized multithreaded architectures for higher responsiveness; started a Linux/Windows cross-platform transition. Built bidirectional serial communication between the embedded board and desktop app; implemented REST services and database schemas for measurement data.</p>
+              <span class="text-label-caps text-primary" data-i18n="job.sancaktar.date">Jul 2025 – Mar 2026</span>
+              <h4 class="text-body-lg font-bold text-on-surface" data-i18n="job.sancaktar.title">Software Developer — SANCAKTAR Mekatronik</h4>
+              <p class="text-body-md text-on-surface-variant" data-i18n="job.sancaktar.desc">Optimized multithreaded architectures for higher responsiveness; started a Linux/Windows cross-platform transition. Built bidirectional serial communication between the embedded board and desktop app; implemented REST services and database schemas for measurement data.</p>
             </div>
           </div>
           <div class="relative">
             <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-surface-container ring-4 ring-white/5"></div>
             <div>
-              <span class="text-label-caps text-primary">Jul 2025 – Jan 2026</span>
-              <h4 class="text-body-lg font-bold text-on-surface">Software Developer (Project-Based) — UGF Makine</h4>
-              <p class="text-body-md text-on-surface-variant">Designed an IoT smart system architecture and Flutter remote-control interfaces. Built a Supabase/PostgreSQL backend for device data and implemented ESP32 Wi-Fi AP for initial device configuration.</p>
+              <span class="text-label-caps text-primary" data-i18n="job.ugf.date">Jul 2025 – Jan 2026</span>
+              <h4 class="text-body-lg font-bold text-on-surface" data-i18n="job.ugf.title">Software Developer (Project-Based) — UGF Makine</h4>
+              <p class="text-body-md text-on-surface-variant" data-i18n="job.ugf.desc">Designed an IoT smart system architecture and Flutter remote-control interfaces. Built a Supabase/PostgreSQL backend for device data and implemented ESP32 Wi-Fi AP for initial device configuration.</p>
             </div>
           </div>
           <div class="relative">
             <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-surface-container ring-4 ring-white/5"></div>
             <div>
-              <span class="text-label-caps text-primary">Jun 2025 – Aug 2025</span>
-              <h4 class="text-body-lg font-bold text-on-surface">Software Developer Intern — Nefel Hassas Tarım</h4>
-              <p class="text-body-md text-on-surface-variant">Optimized the autonomous robot UI and control logic; implemented serial command protocols. Designed an end-of-row U-turn navigation algorithm from sensor data and completed ROS setup on Raspberry Pi.</p>
+              <span class="text-label-caps text-primary" data-i18n="job.nefel.date">Jun 2025 – Aug 2025</span>
+              <h4 class="text-body-lg font-bold text-on-surface" data-i18n="job.nefel.title">Software Developer Intern — Nefel Hassas Tarım</h4>
+              <p class="text-body-md text-on-surface-variant" data-i18n="job.nefel.desc">Optimized the autonomous robot UI and control logic; implemented serial command protocols. Designed an end-of-row U-turn navigation algorithm from sensor data and completed ROS setup on Raspberry Pi.</p>
             </div>
           </div>
           <div class="relative">
             <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-surface-container ring-4 ring-white/5"></div>
             <div>
-              <span class="text-label-caps text-primary">2022 – 2026</span>
-              <h4 class="text-body-lg font-bold text-on-surface">B.Sc. Information Systems and Technologies — Muş Alparslan University</h4>
+              <span class="text-label-caps text-primary" data-i18n="edu.date">2022 – 2026</span>
+              <h4 class="text-body-lg font-bold text-on-surface" data-i18n="edu.title">B.Sc. Information Systems and Technologies — Muş Alparslan University</h4>
               <ul class="mt-2 space-y-1 text-body-md text-on-surface-variant list-none">
-                <li>GPA 3.10 / 4.00</li>
-                <li>TEDx Community Team Member</li>
-                <li>Erasmus at University of Beira Interior (Portugal)</li>
+                <li data-i18n="edu.gpa">GPA 3.10 / 4.00</li>
+                <li data-i18n="edu.tedx">TEDx Community Team Member</li>
+                <li data-i18n="edu.erasmus">Erasmus at University of Beira Interior (Portugal)</li>
               </ul>
             </div>
           </div>
@@ -556,7 +577,7 @@ tailwind.config = {
   <!-- Focus areas (replaces placeholder certificates) -->
   <section class="py-24 bg-surface-container-low" id="focus">
     <div class="max-w-container-max mx-auto px-5 md:px-margin-desktop">
-      <h2 class="text-headline-lg font-headline-lg text-on-surface mb-stack-lg text-center fade-in-up">
+      <h2 class="text-headline-lg font-headline-lg text-on-surface mb-stack-lg text-center fade-in-up" data-i18n-html="focus.title">
         What I <span class="gradient-text">Focus On</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
@@ -564,22 +585,22 @@ tailwind.config = {
           <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-primary/15 flex items-center justify-center">
             <span class="material-symbols-outlined text-primary text-3xl">smartphone</span>
           </div>
-          <h4 class="text-body-lg font-bold text-on-surface mb-2">Cross-Platform Apps</h4>
-          <p class="text-body-md text-on-surface-variant">Flutter mobile and desktop products with clean architecture, state management, and cloud backends.</p>
+          <h4 class="text-body-lg font-bold text-on-surface mb-2" data-i18n="focus.a.title">Cross-Platform Apps</h4>
+          <p class="text-body-md text-on-surface-variant" data-i18n="focus.a.desc">Flutter mobile and desktop products with clean architecture, state management, and cloud backends.</p>
         </div>
         <div class="glass-card p-stack-md rounded-2xl fade-in-up text-center">
           <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-primary/15 flex items-center justify-center">
             <span class="material-symbols-outlined text-primary text-3xl">memory</span>
           </div>
-          <h4 class="text-body-lg font-bold text-on-surface mb-2">Hardware ↔ Software</h4>
-          <p class="text-body-md text-on-surface-variant">ESP32, ROS, and serial integrations that connect sensors and actuators to reliable UIs.</p>
+          <h4 class="text-body-lg font-bold text-on-surface mb-2" data-i18n="focus.b.title">Hardware ↔ Software</h4>
+          <p class="text-body-md text-on-surface-variant" data-i18n="focus.b.desc">ESP32, ROS, and serial integrations that connect sensors and actuators to reliable UIs.</p>
         </div>
         <div class="glass-card p-stack-md rounded-2xl fade-in-up text-center">
           <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-primary/15 flex items-center justify-center">
             <span class="material-symbols-outlined text-primary text-3xl">desktop_windows</span>
           </div>
-          <h4 class="text-body-lg font-bold text-on-surface mb-2">Desktop Systems</h4>
-          <p class="text-body-md text-on-surface-variant">C# / WPF and Flutter desktop apps for monitoring, control, and industrial data workflows.</p>
+          <h4 class="text-body-lg font-bold text-on-surface mb-2" data-i18n="focus.c.title">Desktop Systems</h4>
+          <p class="text-body-md text-on-surface-variant" data-i18n="focus.c.desc">C# / WPF and Flutter desktop apps for monitoring, control, and industrial data workflows.</p>
         </div>
       </div>
     </div>
@@ -589,10 +610,10 @@ tailwind.config = {
   <section class="py-24 max-w-container-max mx-auto px-5 md:px-margin-desktop" id="contact">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
       <div class="fade-in-up">
-        <h2 class="text-display-mobile md:text-display font-display text-on-surface mb-stack-sm">
+        <h2 class="text-display-mobile md:text-display font-display text-on-surface mb-stack-sm" data-i18n-html="contact.title">
           Let's Build <br/><span class="gradient-text">Something Great</span> Together
         </h2>
-        <p class="text-body-lg text-on-surface-variant mb-stack-md max-w-md">
+        <p class="text-body-lg text-on-surface-variant mb-stack-md max-w-md" data-i18n="contact.lead">
           Have a project in mind or just want to chat? I'm always open to new opportunities and interesting collaborations.
         </p>
         <div class="space-y-6">
@@ -631,35 +652,35 @@ tailwind.config = {
         <form id="contact-form" class="space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="space-y-2">
-              <label class="text-label-caps text-on-surface-variant" for="full-name">FULL NAME</label>
+              <label class="text-label-caps text-on-surface-variant" for="full-name" data-i18n="form.name">FULL NAME</label>
               <input id="full-name" name="name" required
                      class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:outline-none transition-all text-on-surface"
-                     placeholder="Your name" type="text"/>
+                     placeholder="Your name" data-i18n-placeholder="form.namePh" type="text"/>
             </div>
             <div class="space-y-2">
-              <label class="text-label-caps text-on-surface-variant" for="email">EMAIL ADDRESS</label>
+              <label class="text-label-caps text-on-surface-variant" for="email" data-i18n="form.email">EMAIL ADDRESS</label>
               <input id="email" name="email" required
                      class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:outline-none transition-all text-on-surface"
-                     placeholder="you@company.com" type="email"/>
+                     placeholder="you@company.com" data-i18n-placeholder="form.emailPh" type="email"/>
             </div>
           </div>
           <div class="space-y-2">
-            <label class="text-label-caps text-on-surface-variant" for="subject">SUBJECT</label>
+            <label class="text-label-caps text-on-surface-variant" for="subject" data-i18n="form.subject">SUBJECT</label>
             <input id="subject" name="subject" required
                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:outline-none transition-all text-on-surface"
-                   placeholder="Project inquiry" type="text"/>
+                   placeholder="Project inquiry" data-i18n-placeholder="form.subjectPh" type="text"/>
           </div>
           <div class="space-y-2">
-            <label class="text-label-caps text-on-surface-variant" for="message">MESSAGE</label>
+            <label class="text-label-caps text-on-surface-variant" for="message" data-i18n="form.message">MESSAGE</label>
             <textarea id="message" name="message" required rows="4"
                       class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:outline-none transition-all text-on-surface"
-                      placeholder="Tell me about your vision..."></textarea>
+                      placeholder="Tell me about your vision..." data-i18n-placeholder="form.messagePh"></textarea>
           </div>
           <button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold flex items-center justify-center group hover:shadow-[0_0_20px_rgba(79,70,229,0.3)] transition-all" type="submit">
-            Send Message
+            <span data-i18n="form.submit">Send Message</span>
             <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">send</span>
           </button>
-          <p class="text-label-caps text-outline text-center">Opens your email client with the message ready to send.</p>
+          <p class="text-label-caps text-outline text-center" data-i18n="form.hint">Opens your email client with the message ready to send.</p>
         </form>
       </div>
     </div>
@@ -677,41 +698,17 @@ tailwind.config = {
          href="https://github.com/CanDorukk" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps"
          href="https://www.linkedin.com/in/candorukk" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <button type="button" data-cv-open
-              class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps">
-        Resume
-      </button>
+      <button type="button" id="resume-btn-footer"
+              class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps"
+              data-i18n="footer.resume">Resume</button>
     </div>
     <div class="text-center md:text-right">
-      <p class="text-body-md text-on-surface-variant">Designed &amp; Developed by <span class="text-on-surface font-bold">Semahattin Can Doruk</span></p>
+      <p class="text-body-md text-on-surface-variant" data-i18n-html="footer.credit">Designed &amp; Developed by <span class="text-on-surface font-bold">Semahattin Can Doruk</span></p>
     </div>
   </div>
 </footer>
 
-<div id="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title" aria-hidden="true">
-  <div class="glass-card w-full max-w-md rounded-3xl p-stack-md md:p-stack-lg relative">
-    <button type="button" id="cv-modal-close" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface p-1" aria-label="Close">
-      <span class="material-symbols-outlined">close</span>
-    </button>
-    <h3 id="cv-modal-title" class="text-headline-sm font-headline-sm text-on-surface mb-2 pr-8">Download Resume</h3>
-    <p class="text-body-md text-on-surface-variant mb-stack-md">Choose a language to open the CV.</p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <a href="assets/CV_EN.pdf" target="_blank" rel="noopener noreferrer" data-cv-choice
-         class="glass-card rounded-2xl p-5 text-center hover:border-primary/40 group no-underline">
-        <span class="material-symbols-outlined text-primary text-3xl mb-2">description</span>
-        <p class="font-bold text-on-surface group-hover:text-primary transition-colors">English</p>
-        <p class="text-label-caps text-outline mt-1">Software Developer CV</p>
-      </a>
-      <a href="assets/CV_TR.pdf" target="_blank" rel="noopener noreferrer" data-cv-choice
-         class="glass-card rounded-2xl p-5 text-center hover:border-primary/40 group no-underline">
-        <span class="material-symbols-outlined text-primary text-3xl mb-2">description</span>
-        <p class="font-bold text-on-surface group-hover:text-primary transition-colors">Türkçe</p>
-        <p class="text-label-caps text-outline mt-1">Yazılım Geliştirici CV</p>
-      </a>
-    </div>
-  </div>
-</div>
-
+<script src="assets/i18n.js"></script>
 <script>
 (function () {
   const canvas = document.getElementById('shader-canvas');
@@ -830,39 +827,53 @@ void main() {
     link.addEventListener('click', closeMenu);
   });
 
-  const cvModal = document.getElementById('cv-modal');
-  const cvClose = document.getElementById('cv-modal-close');
+  let currentLang = localStorage.getItem('scd-lang') || 'en';
+  const dict = window.SCD_I18N || { en: {}, tr: {} };
 
-  function openCvModal() {
-    cvModal.classList.add('open');
-    cvModal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    closeMenu();
+  function applyLanguage(lang) {
+    currentLang = lang === 'tr' ? 'tr' : 'en';
+    localStorage.setItem('scd-lang', currentLang);
+    document.documentElement.lang = currentLang;
+    const t = dict[currentLang] || {};
+
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] != null) el.textContent = t[key];
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-html');
+      if (t[key] != null) el.innerHTML = t[key];
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (t[key] != null) el.setAttribute('placeholder', t[key]);
+    });
+
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
+    });
   }
 
-  function closeCvModal() {
-    cvModal.classList.remove('open');
-    cvModal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+  document.querySelectorAll('.lang-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      applyLanguage(btn.getAttribute('data-lang'));
+      closeMenu();
+    });
+  });
+
+  function openResume() {
+    const href = currentLang === 'tr' ? 'assets/CV_TR.pdf' : 'assets/CV_EN.pdf';
+    window.open(href, '_blank', 'noopener,noreferrer');
   }
 
-  document.querySelectorAll('[data-cv-open]').forEach((btn) => {
-    btn.addEventListener('click', openCvModal);
+  ['resume-btn', 'resume-btn-mobile', 'resume-btn-footer'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', openResume);
   });
 
-  cvClose.addEventListener('click', closeCvModal);
-
-  cvModal.addEventListener('click', (e) => {
-    if (e.target === cvModal) closeCvModal();
-  });
-
-  document.querySelectorAll('[data-cv-choice]').forEach((link) => {
-    link.addEventListener('click', () => closeCvModal());
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && cvModal.classList.contains('open')) closeCvModal();
-  });
+  applyLanguage(currentLang);
 
   const sections = ['hero', 'projects', 'about', 'contact'];
   const navLinks = document.querySelectorAll('.nav-link');
