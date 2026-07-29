@@ -175,6 +175,19 @@ tailwind.config = {
   }
   #mobile-menu.open { max-height: 420px; }
 
+  #cv-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(1, 15, 31, 0.72);
+    backdrop-filter: blur(8px);
+  }
+  #cv-modal.open { display: flex; }
+
   .lang-switch {
     display: inline-flex;
     align-items: center;
@@ -708,6 +721,30 @@ tailwind.config = {
   </div>
 </footer>
 
+<div id="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title" aria-hidden="true">
+  <div class="glass-card w-full max-w-md rounded-3xl p-stack-md md:p-stack-lg relative">
+    <button type="button" id="cv-modal-close" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface p-1" aria-label="Close">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <h3 id="cv-modal-title" class="text-headline-sm font-headline-sm text-on-surface mb-2 pr-8" data-i18n="cv.title">Download Resume</h3>
+    <p class="text-body-md text-on-surface-variant mb-stack-md" data-i18n="cv.sub">Choose a language to open the CV.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <a href="assets/CV_EN.pdf" target="_blank" rel="noopener noreferrer" data-cv-choice
+         class="glass-card rounded-2xl p-5 text-center hover:border-primary/40 group no-underline">
+        <span class="material-symbols-outlined text-primary text-3xl mb-2">description</span>
+        <p class="font-bold text-on-surface group-hover:text-primary transition-colors">English</p>
+        <p class="text-label-caps text-outline mt-1">Software Developer CV</p>
+      </a>
+      <a href="assets/CV_TR.pdf" target="_blank" rel="noopener noreferrer" data-cv-choice
+         class="glass-card rounded-2xl p-5 text-center hover:border-primary/40 group no-underline">
+        <span class="material-symbols-outlined text-primary text-3xl mb-2">description</span>
+        <p class="font-bold text-on-surface group-hover:text-primary transition-colors">Türkçe</p>
+        <p class="text-label-caps text-outline mt-1">Yazılım Geliştirici CV</p>
+      </a>
+    </div>
+  </div>
+</div>
+
 <script src="assets/i18n.js"></script>
 <script>
 (function () {
@@ -863,14 +900,37 @@ void main() {
     });
   });
 
-  function openResume() {
-    const href = currentLang === 'tr' ? 'assets/CV_TR.pdf' : 'assets/CV_EN.pdf';
-    window.open(href, '_blank', 'noopener,noreferrer');
+  function openCvModal() {
+    const cvModal = document.getElementById('cv-modal');
+    cvModal.classList.add('open');
+    cvModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeMenu();
+  }
+
+  function closeCvModal() {
+    const cvModal = document.getElementById('cv-modal');
+    cvModal.classList.remove('open');
+    cvModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
   }
 
   ['resume-btn', 'resume-btn-mobile', 'resume-btn-footer'].forEach((id) => {
     const el = document.getElementById(id);
-    if (el) el.addEventListener('click', openResume);
+    if (el) el.addEventListener('click', openCvModal);
+  });
+
+  document.getElementById('cv-modal-close').addEventListener('click', closeCvModal);
+  document.getElementById('cv-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'cv-modal') closeCvModal();
+  });
+  document.querySelectorAll('[data-cv-choice]').forEach((link) => {
+    link.addEventListener('click', () => closeCvModal());
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.getElementById('cv-modal').classList.contains('open')) {
+      closeCvModal();
+    }
   });
 
   applyLanguage(currentLang);

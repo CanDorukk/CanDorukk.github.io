@@ -63,7 +63,9 @@ window.SCD_I18N = {
     "form.submit": "Send Message",
     "form.hint": "Opens your email client with the message ready to send.",
     "footer.credit": "Designed & Developed by <span class=\"text-on-surface font-bold\">Semahattin Can Doruk</span>",
-    "footer.resume": "Resume"
+    "footer.resume": "Resume",
+    "cv.title": "Download Resume",
+    "cv.sub": "Choose a language to open the CV."
   },
   tr: {
     "nav.home": "Ana Sayfa",
@@ -129,6 +131,8 @@ window.SCD_I18N = {
     "form.submit": "Mesaj Gönder",
     "form.hint": "Mesajın hazır olduğu e-posta istemcinizi açar.",
     "footer.credit": "Tasarlayan & Geliştiren <span class=\"text-on-surface font-bold\">Semahattin Can Doruk</span>",
-    "footer.resume": "Özgeçmiş"
+    "footer.resume": "Özgeçmiş",
+    "cv.title": "Özgeçmiş İndir",
+    "cv.sub": "Açmak istediğiniz CV dilini seçin."
   }
 };
