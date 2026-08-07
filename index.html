@@ -972,6 +972,7 @@ void main() {
     status.textContent = t['form.sending'] || 'Sending...';
 
     try {
+      // Must be opened via https://candorukk.github.io (not file://)
       const res = await fetch('https://formsubmit.co/ajax/semahattincandoruk@gmail.com', {
         method: 'POST',
         headers: {
@@ -985,21 +986,35 @@ void main() {
           message,
           _subject: 'Portfolio: ' + subject,
           _replyto: email,
-          _template: 'table',
-          _captcha: 'false'
+          _template: 'table'
         })
       });
 
-      if (!res.ok) throw new Error('Request failed');
-      const data = await res.json();
-      if (data.success === 'false' || data.success === false) throw new Error(data.message || 'Failed');
+      const data = await res.json().catch(() => ({}));
+      const ok = data.success === true || data.success === 'true';
+      if (!res.ok || !ok) {
+        const apiMsg = (data && data.message) ? String(data.message) : '';
+        if (/activation/i.test(apiMsg)) {
+          throw new Error('ACTIVATE');
+        }
+        if (/web server|HTML files/i.test(apiMsg)) {
+          throw new Error('LOCAL');
+        }
+        throw new Error(apiMsg || 'FAILED');
+      }
 
       status.className = 'text-label-caps text-center min-h-[16px] text-primary';
       status.textContent = t['form.success'] || 'Message sent successfully.';
       form.reset();
     } catch (err) {
       status.className = 'text-label-caps text-center min-h-[16px] text-error';
-      status.textContent = t['form.error'] || 'Could not send. Please try again or email me directly.';
+      if (err && err.message === 'ACTIVATE') {
+        status.textContent = t['form.activate'] || 'Check your Gmail and click the FormSubmit activation link, then try again.';
+      } else if (err && err.message === 'LOCAL') {
+        status.textContent = t['form.local'] || 'Open the live site (candorukk.github.io) to send messages.';
+      } else {
+        status.textContent = t['form.error'] || 'Could not send. Please try again or email me directly.';
+      }
     } finally {
       btn.disabled = false;
       btn.classList.remove('opacity-70', 'cursor-not-allowed');
