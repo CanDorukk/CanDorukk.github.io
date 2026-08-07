@@ -689,11 +689,12 @@ tailwind.config = {
                       class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:outline-none transition-all text-on-surface"
                       placeholder="Tell me about your vision..." data-i18n-placeholder="form.messagePh"></textarea>
           </div>
-          <button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold flex items-center justify-center group hover:shadow-[0_0_20px_rgba(79,70,229,0.3)] transition-all" type="submit">
+          <button id="form-submit-btn" class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold flex items-center justify-center group hover:shadow-[0_0_20px_rgba(79,70,229,0.3)] transition-all" type="submit">
             <span data-i18n="form.submit">Send Message</span>
             <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">send</span>
           </button>
-          <p class="text-label-caps text-outline text-center" data-i18n="form.hint">Opens your email client with the message ready to send.</p>
+          <p id="form-status" class="text-label-caps text-center min-h-[16px]" aria-live="polite"></p>
+          <p class="text-label-caps text-outline text-center" data-i18n="form.hint">Your message will be sent directly to my inbox.</p>
         </form>
       </div>
     </div>
@@ -953,20 +954,56 @@ void main() {
   window.addEventListener('scroll', updateActiveNav, { passive: true });
   updateActiveNav();
 
-  document.getElementById('contact-form').addEventListener('submit', (e) => {
+  document.getElementById('contact-form').addEventListener('submit', async (e) => {
     e.preventDefault();
+    const form = e.target;
+    const btn = document.getElementById('form-submit-btn');
+    const status = document.getElementById('form-status');
+    const t = (window.SCD_I18N && window.SCD_I18N[currentLang]) || {};
+
     const name = document.getElementById('full-name').value.trim();
     const email = document.getElementById('email').value.trim();
     const subject = document.getElementById('subject').value.trim();
     const message = document.getElementById('message').value.trim();
-    const body = encodeURIComponent(
-      message + '\n\n—\n' + name + '\n' + email
-    );
-    window.location.href =
-      'mailto:semahattincandoruk@gmail.com?subject=' +
-      encodeURIComponent(subject) +
-      '&body=' +
-      body;
+
+    btn.disabled = true;
+    btn.classList.add('opacity-70', 'cursor-not-allowed');
+    status.className = 'text-label-caps text-center min-h-[16px] text-on-surface-variant';
+    status.textContent = t['form.sending'] || 'Sending...';
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/semahattincandoruk@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          subject,
+          message,
+          _subject: 'Portfolio: ' + subject,
+          _replyto: email,
+          _template: 'table',
+          _captcha: 'false'
+        })
+      });
+
+      if (!res.ok) throw new Error('Request failed');
+      const data = await res.json();
+      if (data.success === 'false' || data.success === false) throw new Error(data.message || 'Failed');
+
+      status.className = 'text-label-caps text-center min-h-[16px] text-primary';
+      status.textContent = t['form.success'] || 'Message sent successfully.';
+      form.reset();
+    } catch (err) {
+      status.className = 'text-label-caps text-center min-h-[16px] text-error';
+      status.textContent = t['form.error'] || 'Could not send. Please try again or email me directly.';
+    } finally {
+      btn.disabled = false;
+      btn.classList.remove('opacity-70', 'cursor-not-allowed');
+    }
   });
 })();
 </script>
