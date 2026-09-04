@@ -19,8 +19,7 @@
   (function () {
     try {
       var stored = localStorage.getItem('scd-theme');
-      var dark = stored ? stored === 'dark'
-        : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var dark = stored ? stored === 'dark' : true; // dark by default
       document.documentElement.classList.toggle('dark', dark);
     } catch (e) {}
   })();
@@ -155,6 +154,23 @@ tailwind.config = {
       <button type="button" id="theme-toggle" class="text-muted hover:text-ink transition-colors" aria-label="Toggle theme">
         <span class="material-symbols-outlined text-[20px] align-middle" id="theme-icon">dark_mode</span>
       </button>
+
+      <div class="relative" id="settings-wrap">
+        <button type="button" id="settings-toggle" class="text-muted hover:text-ink transition-colors" aria-label="Settings" aria-haspopup="true" aria-expanded="false">
+          <span class="material-symbols-outlined text-[20px] align-middle">settings</span>
+        </button>
+        <div id="settings-menu" class="hidden absolute right-0 mt-3 w-56 bg-bg border border-line rounded-xl p-1.5 shadow-lg">
+          <p class="px-3 py-2 text-xs font-mono text-muted" data-i18n="ver.label">Site version</p>
+          <a href="./" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-surface">
+            <span>v.2 <span class="text-muted" data-i18n="ver.current">— current</span></span>
+            <span class="material-symbols-outlined text-[18px] text-accent">check</span>
+          </a>
+          <a href="v1/" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-surface">
+            <span>v.1 <span class="text-muted" data-i18n="ver.old">— previous site</span></span>
+            <span class="material-symbols-outlined text-[18px] text-muted">arrow_outward</span>
+          </a>
+        </div>
+      </div>
     </div>
 
     <button id="menu-toggle" class="md:hidden p-2 -mr-2" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -169,6 +185,7 @@ tailwind.config = {
       <a href="#experience" data-mobile-link data-i18n="nav.experience">Experience</a>
       <a href="#contact" data-mobile-link data-i18n="nav.contact">Contact</a>
       <button type="button" id="resume-btn-mobile" class="text-left text-ink" data-i18n="nav.resume">Résumé</button>
+      <a href="v1/" class="text-left text-muted hover:text-ink transition-colors"><span data-i18n="ver.old">— previous site</span> (v.1)</a>
       <div class="flex items-center justify-between pt-1">
         <div class="seg" role="group" aria-label="Language">
           <button type="button" data-lang="tr">TR</button>
@@ -496,7 +513,7 @@ tailwind.config = {
         <span class="material-symbols-outlined text-accent">description</span>
         <p class="font-medium mt-1 text-sm">English</p>
       </a>
-      <a href="assets/Semahattin_Can_Doruk_Yazilim_Gelistirici_CV.pdf" target="_blank" rel="noopener noreferrer" data-cv-choice
+      <a href="assets/Semahattin_Can_Doruk_Software_Developer_TR.pdf" target="_blank" rel="noopener noreferrer" data-cv-choice
          class="border border-line rounded-xl p-4 text-center hover:border-accent transition-colors">
         <span class="material-symbols-outlined text-accent">description</span>
         <p class="font-medium mt-1 text-sm">Türkçe</p>
@@ -528,6 +545,24 @@ tailwind.config = {
     var el = document.getElementById(id);
     if (el) el.addEventListener('click', toggleTheme);
   });
+
+  // Settings dropdown (version switcher)
+  var sWrap = document.getElementById('settings-wrap');
+  var sToggle = document.getElementById('settings-toggle');
+  var sMenu = document.getElementById('settings-menu');
+  if (sToggle) {
+    sToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = sMenu.classList.toggle('hidden');
+      sToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+    });
+    document.addEventListener('click', function (e) {
+      if (!sWrap.contains(e.target)) sMenu.classList.add('hidden');
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') sMenu.classList.add('hidden');
+    });
+  }
 
   // Mobile menu
   var toggle = document.getElementById('menu-toggle');

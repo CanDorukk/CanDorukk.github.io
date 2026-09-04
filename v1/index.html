@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SCD | Semahattin Can Doruk — Portfolio</title>
+<meta name="description" content="Semahattin Can Doruk — Software Developer (Flutter • C# • Embedded Systems). Portfolio of mobile, desktop, and IoT solutions."/>
+<meta name="theme-color" content="#051424"/>
+<link rel="canonical" href="https://candorukk.github.io/"/>
+<meta property="og:title" content="Semahattin Can Doruk — Portfolio"/>
+<meta property="og:description" content="Software Developer · Flutter • C# • Embedded Systems"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://candorukk.github.io/"/>
+<meta property="og:image" content="https://candorukk.github.io/assets/hero.png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-error-container": "#ffdad6",
+        "tertiary-container": "#a44100",
+        "on-primary-container": "#dad7ff",
+        "inverse-surface": "#d4e4fa",
+        "inverse-primary": "#4d44e3",
+        "on-error": "#690005",
+        "primary-container": "#4f46e5",
+        "on-tertiary-container": "#ffd2be",
+        "tertiary-fixed": "#ffdbcc",
+        "error-container": "#93000a",
+        "surface-tint": "#c3c0ff",
+        "secondary-fixed": "#e0e0ff",
+        "surface-container": "#122131",
+        "outline": "#918fa1",
+        "secondary-fixed-dim": "#bdc2ff",
+        "on-primary": "#1d00a5",
+        "primary-fixed": "#e2dfff",
+        "on-secondary-fixed": "#000767",
+        "background": "#051424",
+        "error": "#ffb4ab",
+        "on-secondary": "#131e8c",
+        "on-tertiary": "#571f00",
+        "surface-container-high": "#1c2b3c",
+        "primary-fixed-dim": "#c3c0ff",
+        "surface-dim": "#051424",
+        "surface-container-highest": "#273647",
+        "surface-bright": "#2c3a4c",
+        "secondary": "#bdc2ff",
+        "surface-variant": "#273647",
+        "on-surface": "#d4e4fa",
+        "primary": "#c3c0ff",
+        "on-primary-fixed": "#0f0069",
+        "on-secondary-fixed-variant": "#2f3aa3",
+        "outline-variant": "#464555",
+        "on-primary-fixed-variant": "#3323cc",
+        "on-background": "#d4e4fa",
+        "inverse-on-surface": "#233143",
+        "tertiary": "#ffb695",
+        "surface-container-low": "#0d1c2d",
+        "secondary-container": "#2f3aa3",
+        "tertiary-fixed-dim": "#ffb695",
+        "on-tertiary-fixed-variant": "#7b2f00",
+        "on-tertiary-fixed": "#351000",
+        "surface": "#051424",
+        "surface-container-lowest": "#010f1f",
+        "on-surface-variant": "#c7c4d8",
+        "on-secondary-container": "#a8afff"
+      },
+      borderRadius: {
+        DEFAULT: "0.25rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+        full: "9999px"
+      },
+      spacing: {
+        "margin-mobile": "20px",
+        "stack-lg": "48px",
+        "container-max": "1200px",
+        "stack-md": "24px",
+        base: "4px",
+        "stack-sm": "12px",
+        gutter: "24px",
+        "margin-desktop": "40px"
+      },
+      fontFamily: {
+        "label-caps": ["Inter"],
+        "display-mobile": ["Inter"],
+        "headline-sm": ["Inter"],
+        "headline-lg": ["Inter"],
+        display: ["Inter"],
+        "body-lg": ["Inter"],
+        "body-md": ["Inter"],
+        "code-sm": ["JetBrains Mono"]
+      },
+      fontSize: {
+        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+        "display-mobile": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+        display: ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+        "code-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }]
+      }
+    }
+  }
+};
+</script>
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  .float-animation { animation: float 6s ease-in-out infinite; }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(195, 192, 255, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px -10px rgba(79, 70, 229, 0.2);
+  }
+
+  .skill-chip {
+    background: rgba(79, 70, 229, 0.1);
+    color: #c3c0ff;
+    border: 1px solid rgba(195, 192, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  .skill-chip:hover {
+    border-color: #c3c0ff;
+    background: rgba(79, 70, 229, 0.2);
+    transform: scale(1.05);
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #c3c0ff 0%, #4f46e5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .nav-link.active {
+    color: #c3c0ff;
+    font-weight: 700;
+    border-bottom: 2px solid #c3c0ff;
+    padding-bottom: 4px;
+  }
+
+  #mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  #mobile-menu.open { max-height: 420px; }
+
+  #cv-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(1, 15, 31, 0.72);
+    backdrop-filter: blur(8px);
+  }
+  #cv-modal.open { display: flex; }
+
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 3px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .lang-btn {
+    min-width: 40px;
+    padding: 6px 10px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #c7c4d8;
+    transition: all 0.2s ease;
+  }
+  .lang-btn.active {
+    background: #c3c0ff;
+    color: #1d00a5;
+  }
+  .lang-btn:not(.active):hover {
+    color: #d4e4fa;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #051424; }
+  ::-webkit-scrollbar-thumb { background: #273647; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #4f46e5; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .float-animation { animation: none; }
+    .fade-in-up { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30 selection:text-primary">
+
+<div style="position:fixed;bottom:16px;right:16px;z-index:60">
+  <a href="../" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:9999px;border:1px solid rgba(255,255,255,0.18);background:rgba(5,20,36,0.85);backdrop-filter:blur(8px);color:#d4e4fa;font-size:12px;font-weight:700;letter-spacing:0.04em;text-decoration:none">
+    <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span>
+    <span>v.1 arşiv · yeni siteye dön (v.2)</span>
+  </a>
+</div>
+
+
+<nav class="fixed top-0 w-full z-50 bg-surface/30 backdrop-blur-xl border-b border-white/10 shadow-sm">
+  <div class="max-w-container-max mx-auto px-5 md:px-margin-desktop flex justify-between items-center h-20">
+    <a href="#hero" class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tighter">SCD</a>
+    <div class="hidden md:flex space-x-gutter items-center">
+      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#hero" data-i18n="nav.home">Home</a>
+      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#projects" data-i18n="nav.projects">Projects</a>
+      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#about" data-i18n="nav.about">About</a>
+      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#contact" data-i18n="nav.contact">Contact</a>
+      <button type="button" id="resume-btn"
+              class="ml-4 bg-primary text-on-primary px-6 py-2 rounded-full font-bold hover:scale-95 transition-transform"
+              data-i18n="nav.resume">Resume</button>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang="tr">TR</button>
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      </div>
+    </div>
+    <button id="menu-toggle" class="md:hidden text-on-surface p-2" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="material-symbols-outlined" id="menu-icon">menu</span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="md:hidden border-t border-white/10 bg-surface/95 backdrop-blur-xl">
+    <div class="flex flex-col px-5 py-4 space-y-4">
+      <a class="text-on-surface font-body-md" href="#hero" data-mobile-link data-i18n="nav.home">Home</a>
+      <a class="text-on-surface font-body-md" href="#projects" data-mobile-link data-i18n="nav.projects">Projects</a>
+      <a class="text-on-surface font-body-md" href="#about" data-mobile-link data-i18n="nav.about">About</a>
+      <a class="text-on-surface font-body-md" href="#contact" data-mobile-link data-i18n="nav.contact">Contact</a>
+      <button type="button" id="resume-btn-mobile"
+              class="bg-primary text-on-primary px-6 py-3 rounded-full font-bold text-center w-full"
+              data-i18n="nav.resume">Resume</button>
+      <div class="lang-switch self-center" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang="tr">TR</button>
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="relative">
+  <!-- Hero -->
+  <section class="relative min-h-screen flex items-center overflow-hidden pt-20" id="hero">
+       <div class="absolute inset-0 w-full h-full opacity-40 pointer-events-none" style="display:block;" aria-hidden="true">
+      <canvas id="shader-canvas" style="display:block;width:100%;height:100%"></canvas>
+    </div>
+    <div class="max-w-container-max mx-auto px-5 md:px-margin-desktop w-full grid grid-cols-1 md:grid-cols-2 gap-stack-lg relative z-10 py-12">
+      <div class="flex flex-col justify-center space-y-stack-sm fade-in-up">
+        <div class="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 px-4 py-1 rounded-full w-fit">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-label-caps font-label-caps text-primary tracking-widest uppercase" data-i18n="hero.badge">Software Developer</span>
+        </div>
+        <h1 class="text-display-mobile md:text-display font-display text-on-surface leading-tight">
+          Semahattin <span class="gradient-text">Can Doruk</span>
+        </h1>
+        <p class="text-headline-sm font-headline-sm text-on-surface-variant" data-i18n="hero.role">
+          Software Developer · Flutter • C# • Embedded Systems
+        </p>
+        <p class="text-body-lg font-body-lg text-on-surface-variant/80 max-w-xl" data-i18n="hero.lead">
+          End-to-end solutions across mobile, desktop, and embedded systems — focused on system design, multithreading, and hardware–software integration.
+        </p>
+        <div class="flex flex-wrap gap-2 py-stack-sm">
+          <span class="skill-chip">Flutter</span>
+          <span class="skill-chip">Dart</span>
+          <span class="skill-chip">C#</span>
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">Riverpod</span>
+          <span class="skill-chip">Supabase</span>
+          <span class="skill-chip">Firebase</span>
+          <span class="skill-chip">PostgreSQL</span>
+          <span class="skill-chip">ESP32</span>
+          <span class="skill-chip">ROS</span>
+          <span class="skill-chip">FastAPI</span>
+        </div>
+        <div class="flex flex-wrap gap-4 pt-stack-sm">
+          <a class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold flex items-center group" href="#projects">
+            <span data-i18n="hero.ctaProjects">View Projects</span>
+            <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+          <a class="bg-white/5 border border-white/10 text-on-surface px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all" href="#contact" data-i18n="hero.ctaContact">
+            Contact Me
+          </a>
+        </div>
+        <div class="flex items-center flex-wrap gap-6 pt-stack-lg border-t border-white/5">
+          <a class="text-on-surface-variant hover:text-primary transition-colors flex items-center space-x-2"
+             href="https://github.com/CanDorukk" target="_blank" rel="noopener noreferrer">
+            <span class="material-symbols-outlined">terminal</span>
+            <span class="font-label-caps">GitHub</span>
+          </a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors flex items-center space-x-2"
+             href="https://www.linkedin.com/in/candorukk" target="_blank" rel="noopener noreferrer">
+            <span class="material-symbols-outlined">link</span>
+            <span class="font-label-caps">LinkedIn</span>
+          </a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors flex items-center space-x-2"
+             href="mailto:semahattincandoruk@gmail.com">
+            <span class="material-symbols-outlined">mail</span>
+            <span class="font-label-caps">Email</span>
+          </a>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center justify-end fade-in-up md:translate-x-8 lg:translate-x-16">
+        <div class="relative w-full max-w-lg aspect-square float-animation">
+          <div class="absolute inset-0 glass-card rounded-3xl overflow-hidden shadow-2xl rotate-3">
+            <img alt="Abstract 3D coding illustration with glowing glass panels"
+                 class="w-full h-full object-cover opacity-80 mix-blend-lighten"
+                 src="assets/hero.png" width="800" height="800"/>
+          </div>
+          <div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl -rotate-6">
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary">flutter_dash</span>
+              </div>
+              <div>
+                <p class="text-label-caps font-label-caps text-on-surface-variant" data-i18n="hero.topLang">Top Language</p>
+                <p class="font-bold text-on-surface">Dart / Flutter</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="py-24 bg-surface-container-lowest" id="projects">
+    <div class="max-w-container-max mx-auto px-5 md:px-margin-desktop">
+      <div class="flex justify-between items-end mb-stack-lg fade-in-up">
+        <div>
+          <h2 class="text-headline-lg font-headline-lg text-on-surface" data-i18n-html="projects.title">Featured <span class="gradient-text">Projects</span></h2>
+          <p class="text-body-md text-on-surface-variant max-w-md mt-2" data-i18n="projects.sub">Innovative solutions across mobile, web, and hardware ecosystems.</p>
+        </div>
+        <div class="hidden md:block">
+          <span class="text-label-caps text-outline" data-i18n="projects.scroll">SCROLL TO DISCOVER</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+
+        <a href="https://github.com/CanDorukk/QuizArea" target="_blank" rel="noopener noreferrer"
+           class="glass-card rounded-2xl overflow-hidden flex flex-col fade-in-up group">
+          <div class="h-48 overflow-hidden relative">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 alt="QuizArea app concept" src="assets/quizarea.jpg" width="640" height="360"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+          </div>
+          <div class="p-stack-md flex flex-col flex-grow">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-headline-sm font-headline-sm text-on-surface">QuizArea</h3>
+              <span class="material-symbols-outlined text-primary">arrow_outward</span>
+            </div>
+            <p class="text-body-md text-on-surface-variant mb-4" data-i18n="p.quizarea">Gamified English vocabulary learning app with quiz exercises, progress tracking, and user authentication.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Flutter</span>
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Firebase</span>
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Firestore</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/CanDorukk/agromora" target="_blank" rel="noopener noreferrer"
+           class="glass-card rounded-2xl overflow-hidden flex flex-col fade-in-up group">
+          <div class="h-48 overflow-hidden relative">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 alt="AgroMora dashboard concept" src="assets/agromora.jpg" width="640" height="360"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+          </div>
+          <div class="p-stack-md flex flex-col flex-grow">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-headline-sm font-headline-sm text-on-surface">AgroMora</h3>
+              <span class="material-symbols-outlined text-primary">arrow_outward</span>
+            </div>
+            <p class="text-body-md text-on-surface-variant mb-4" data-i18n="p.agromora">Mobile e-commerce application featuring role-based authorization.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Flutter</span>
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Supabase</span>
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">PostgreSQL</span>
+            </div>
+          </div>
+        </a>
+
+        <div class="glass-card rounded-2xl overflow-hidden flex flex-col fade-in-up">
+          <div class="h-48 overflow-hidden relative">
+            <img class="w-full h-full object-cover" alt="SmartSprinkler hardware concept"
+                 src="assets/smartsprinkler.jpg" width="640" height="360"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+          </div>
+          <div class="p-stack-md flex flex-col flex-grow">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-headline-sm font-headline-sm text-on-surface">SmartSprinkler</h3>
+            </div>
+            <p class="text-body-md text-on-surface-variant mb-4" data-i18n="p.smartsprinkler">IoT irrigation prototype with ESP32 Wi-Fi AP setup, weekly watering schedules, and remote control via mobile app.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Flutter</span>
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">ESP32</span>
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Supabase</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://github.com/CanDorukk/Voice2Note-AI" target="_blank" rel="noopener noreferrer"
+           class="glass-card rounded-2xl overflow-hidden flex flex-col fade-in-up group">
+          <div class="h-48 overflow-hidden relative">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 alt="Voice2Note AI interface concept" src="assets/voice2note.jpg" width="640" height="360"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+          </div>
+          <div class="p-stack-md flex flex-col flex-grow">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-headline-sm font-headline-sm text-on-surface">Voice2Note AI</h3>
+              <span class="material-symbols-outlined text-primary">arrow_outward</span>
+            </div>
+            <p class="text-body-md text-on-surface-variant mb-4" data-i18n="p.voice2note">Note-taking app that converts speech to text via recording or file import, with server-based summarization, search, and PDF generation.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Flutter</span>
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">FastAPI</span>
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">faster-whisper</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/CanDorukk/CrestBalanceW-Web-Introduction" target="_blank" rel="noopener noreferrer"
+           class="glass-card rounded-2xl overflow-hidden flex flex-col fade-in-up group">
+          <div class="h-48 overflow-hidden relative">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 alt="CrestBalance finance app concept" src="assets/crestbalance.jpg" width="640" height="360"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+          </div>
+          <div class="p-stack-md flex flex-col flex-grow">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-headline-sm font-headline-sm text-on-surface">CrestBalance</h3>
+              <span class="material-symbols-outlined text-primary">arrow_outward</span>
+            </div>
+            <p class="text-body-md text-on-surface-variant mb-4" data-i18n="p.crestbalance">Erasmus-focused multi-currency budgeting, grant tracking, and group expense splitting with debt summaries and settlement.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Flutter</span>
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Supabase</span>
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Riverpod</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/CanDorukk/BagisYap" target="_blank" rel="noopener noreferrer"
+           class="glass-card rounded-2xl overflow-hidden flex flex-col fade-in-up group">
+          <div class="h-48 overflow-hidden relative">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 alt="BağışYap donation app concept" src="assets/bagisyap.jpg" width="640" height="360"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+          </div>
+          <div class="p-stack-md flex flex-col flex-grow">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-headline-sm font-headline-sm text-on-surface">BağışYap</h3>
+              <span class="material-symbols-outlined text-primary">arrow_outward</span>
+            </div>
+            <p class="text-body-md text-on-surface-variant mb-4" data-i18n="p.bagisyap">Mobile app listing official donation organizations in Turkey, with campaign browsing and contribution flows.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Flutter</span>
+              <span class="text-code-sm font-code-sm bg-white/5 px-2 py-1 rounded">Supabase</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="py-24 max-w-container-max mx-auto px-5 md:px-margin-desktop" id="about">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg">
+      <div class="fade-in-up">
+        <h2 class="text-headline-lg font-headline-lg text-on-surface mb-stack-md" data-i18n-html="about.title">Professional <span class="gradient-text">Profile</span></h2>
+        <div class="space-y-stack-sm text-body-lg text-on-surface-variant">
+          <p data-i18n="about.p1">I deliver end-to-end solutions across mobile, desktop, and embedded systems, with a strong focus on system design and process optimization.</p>
+          <p data-i18n="about.p2">I have hands-on experience troubleshooting complex architectures, optimizing multithreaded structures, and ensuring seamless hardware–software integration.</p>
+          <p data-i18n="about.p3">B.Sc. student in Information Systems and Technologies at Muş Alparslan University (GPA 3.10 / 4.00).</p>
+        </div>
+        <div class="mt-stack-lg space-y-4">
+          <h3 class="text-headline-sm font-headline-sm text-on-surface" data-i18n="about.expertise">Expertise</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-label-caps font-label-caps text-primary mb-2" data-i18n="about.exp1">Mobile &amp; Desktop</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-chip">Flutter</span>
+                <span class="skill-chip">Dart</span>
+                <span class="skill-chip">Riverpod</span>
+                <span class="skill-chip">go_router</span>
+                <span class="skill-chip">.NET</span>
+                <span class="skill-chip">WPF</span>
+                <span class="skill-chip">Windows Forms</span>
+              </div>
+            </div>
+            <div>
+              <p class="text-label-caps font-label-caps text-primary mb-2" data-i18n="about.exp2">Backend &amp; APIs</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-chip">C#</span>
+                <span class="skill-chip">Python</span>
+                <span class="skill-chip">REST API</span>
+                <span class="skill-chip">Supabase</span>
+                <span class="skill-chip">Firebase</span>
+                <span class="skill-chip">PostgreSQL</span>
+                <span class="skill-chip">Firestore</span>
+              </div>
+            </div>
+            <div>
+              <p class="text-label-caps font-label-caps text-primary mb-2" data-i18n="about.exp3">Embedded &amp; Concepts</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-chip">ESP32</span>
+                <span class="skill-chip">Raspberry Pi</span>
+                <span class="skill-chip">ROS</span>
+                <span class="skill-chip">UART</span>
+                <span class="skill-chip">MVVM</span>
+                <span class="skill-chip">Multithreading</span>
+                <span class="skill-chip">Cross-Platform</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-stack-md fade-in-up">
+        <h3 class="text-headline-sm font-headline-sm text-on-surface" data-i18n="journey.title">Journey</h3>
+        <div class="relative pl-8 space-y-stack-md border-l border-white/10 ml-2">
+          <div class="relative">
+            <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-primary/20"></div>
+            <div>
+              <span class="text-label-caps text-primary" data-i18n="job.sancaktar.date">Jul 2025 – Mar 2026</span>
+              <h4 class="text-body-lg font-bold text-on-surface" data-i18n="job.sancaktar.title">Software Developer — SANCAKTAR Mekatronik</h4>
+              <p class="text-body-md text-on-surface-variant" data-i18n="job.sancaktar.desc">Optimized multithreaded architectures for higher responsiveness; started a Linux/Windows cross-platform transition. Built bidirectional serial communication between the embedded board and desktop app; implemented REST services and database schemas for measurement data.</p>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-surface-container ring-4 ring-white/5"></div>
+            <div>
+              <span class="text-label-caps text-primary" data-i18n="job.ugf.date">Jul 2025 – Jan 2026</span>
+              <h4 class="text-body-lg font-bold text-on-surface" data-i18n="job.ugf.title">Software Developer (Project-Based) — UGF Makine</h4>
+              <p class="text-body-md text-on-surface-variant" data-i18n="job.ugf.desc">Designed an IoT smart system architecture and Flutter remote-control interfaces. Built a Supabase/PostgreSQL backend for device data and implemented ESP32 Wi-Fi AP for initial device configuration.</p>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-surface-container ring-4 ring-white/5"></div>
+            <div>
+              <span class="text-label-caps text-primary" data-i18n="job.nefel.date">Jun 2025 – Aug 2025</span>
+              <h4 class="text-body-lg font-bold text-on-surface" data-i18n="job.nefel.title">Software Developer Intern — Nefel Hassas Tarım</h4>
+              <p class="text-body-md text-on-surface-variant" data-i18n="job.nefel.desc">Optimized the autonomous robot UI and control logic; implemented serial command protocols. Designed an end-of-row U-turn navigation algorithm from sensor data and completed ROS setup on Raspberry Pi.</p>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-surface-container ring-4 ring-white/5"></div>
+            <div>
+              <span class="text-label-caps text-primary" data-i18n="edu.date">2022 – 2026</span>
+              <h4 class="text-body-lg font-bold text-on-surface" data-i18n="edu.title">B.Sc. Information Systems and Technologies — Muş Alparslan University</h4>
+              <ul class="mt-2 space-y-1 text-body-md text-on-surface-variant list-none">
+                <li data-i18n="edu.gpa">GPA 3.10 / 4.00</li>
+                <li data-i18n="edu.tedx">TEDx Community Team Member</li>
+                <li data-i18n="edu.erasmus">Erasmus at University of Beira Interior (Portugal)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Focus areas (replaces placeholder certificates) -->
+  <section class="py-24 bg-surface-container-low" id="focus">
+    <div class="max-w-container-max mx-auto px-5 md:px-margin-desktop">
+      <h2 class="text-headline-lg font-headline-lg text-on-surface mb-stack-lg text-center fade-in-up" data-i18n-html="focus.title">
+        What I <span class="gradient-text">Focus On</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <div class="glass-card p-stack-md rounded-2xl fade-in-up text-center">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-primary/15 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-3xl">smartphone</span>
+          </div>
+          <h4 class="text-body-lg font-bold text-on-surface mb-2" data-i18n="focus.a.title">Cross-Platform Apps</h4>
+          <p class="text-body-md text-on-surface-variant" data-i18n="focus.a.desc">Flutter mobile and desktop products with clean architecture, state management, and cloud backends.</p>
+        </div>
+        <div class="glass-card p-stack-md rounded-2xl fade-in-up text-center">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-primary/15 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-3xl">memory</span>
+          </div>
+          <h4 class="text-body-lg font-bold text-on-surface mb-2" data-i18n="focus.b.title">Hardware ↔ Software</h4>
+          <p class="text-body-md text-on-surface-variant" data-i18n="focus.b.desc">ESP32, ROS, and serial integrations that connect sensors and actuators to reliable UIs.</p>
+        </div>
+        <div class="glass-card p-stack-md rounded-2xl fade-in-up text-center">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-primary/15 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-3xl">desktop_windows</span>
+          </div>
+          <h4 class="text-body-lg font-bold text-on-surface mb-2" data-i18n="focus.c.title">Desktop Systems</h4>
+          <p class="text-body-md text-on-surface-variant" data-i18n="focus.c.desc">C# / WPF and Flutter desktop apps for monitoring, control, and industrial data workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-24 max-w-container-max mx-auto px-5 md:px-margin-desktop" id="contact">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+      <div class="fade-in-up">
+        <h2 class="text-display-mobile md:text-display font-display text-on-surface mb-stack-sm" data-i18n-html="contact.title">
+          Let's Build <br/><span class="gradient-text">Something Great</span> Together
+        </h2>
+        <p class="text-body-lg text-on-surface-variant mb-stack-md max-w-md" data-i18n="contact.lead">
+          Have a project in mind or just want to chat? I'm always open to new opportunities and interesting collaborations.
+        </p>
+        <div class="space-y-6">
+          <a href="mailto:semahattincandoruk@gmail.com" class="flex items-center space-x-4 group">
+            <div class="w-12 h-12 rounded-xl glass-card flex items-center justify-center group-hover:border-primary/40">
+              <span class="material-symbols-outlined text-primary">mail</span>
+            </div>
+            <div>
+              <p class="text-label-caps text-outline">EMAIL</p>
+              <p class="text-body-md text-on-surface group-hover:text-primary transition-colors">semahattincandoruk@gmail.com</p>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/candorukk" target="_blank" rel="noopener noreferrer"
+             class="flex items-center space-x-4 group">
+            <div class="w-12 h-12 rounded-xl glass-card flex items-center justify-center group-hover:border-primary/40">
+              <span class="material-symbols-outlined text-primary">link</span>
+            </div>
+            <div>
+              <p class="text-label-caps text-outline">LINKEDIN</p>
+              <p class="text-body-md text-on-surface group-hover:text-primary transition-colors">linkedin.com/in/candorukk</p>
+            </div>
+          </a>
+          <a href="https://github.com/CanDorukk" target="_blank" rel="noopener noreferrer"
+             class="flex items-center space-x-4 group">
+            <div class="w-12 h-12 rounded-xl glass-card flex items-center justify-center group-hover:border-primary/40">
+              <span class="material-symbols-outlined text-primary">terminal</span>
+            </div>
+            <div>
+              <p class="text-label-caps text-outline">GITHUB</p>
+              <p class="text-body-md text-on-surface group-hover:text-primary transition-colors">github.com/CanDorukk</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="glass-card p-stack-md md:p-stack-lg rounded-3xl fade-in-up">
+        <form id="contact-form" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="text-label-caps text-on-surface-variant" for="full-name" data-i18n="form.name">FULL NAME</label>
+              <input id="full-name" name="name" required
+                     class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:outline-none transition-all text-on-surface"
+                     placeholder="Your name" data-i18n-placeholder="form.namePh" type="text"/>
+            </div>
+            <div class="space-y-2">
+              <label class="text-label-caps text-on-surface-variant" for="email" data-i18n="form.email">EMAIL ADDRESS</label>
+              <input id="email" name="email" required
+                     class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:outline-none transition-all text-on-surface"
+                     placeholder="you@company.com" data-i18n-placeholder="form.emailPh" type="email"/>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label class="text-label-caps text-on-surface-variant" for="subject" data-i18n="form.subject">SUBJECT</label>
+            <input id="subject" name="subject" required
+                   class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:outline-none transition-all text-on-surface"
+                   placeholder="Project inquiry" data-i18n-placeholder="form.subjectPh" type="text"/>
+          </div>
+          <div class="space-y-2">
+            <label class="text-label-caps text-on-surface-variant" for="message" data-i18n="form.message">MESSAGE</label>
+            <textarea id="message" name="message" required rows="4"
+                      class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:outline-none transition-all text-on-surface"
+                      placeholder="Tell me about your vision..." data-i18n-placeholder="form.messagePh"></textarea>
+          </div>
+          <button id="form-submit-btn" class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold flex items-center justify-center group hover:shadow-[0_0_20px_rgba(79,70,229,0.3)] transition-all" type="submit">
+            <span data-i18n="form.submit">Send Message</span>
+            <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">send</span>
+          </button>
+          <p id="form-status" class="text-label-caps text-center min-h-[16px]" aria-live="polite"></p>
+          <p class="text-label-caps text-outline text-center" data-i18n="form.hint">Your message will be sent directly to my inbox.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-surface-container-lowest border-t border-white/5 w-full py-stack-lg">
+  <div class="max-w-container-max mx-auto px-5 md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-stack-md">
+    <div class="flex flex-col items-center md:items-start space-y-2">
+      <div class="font-headline-sm text-headline-sm font-bold text-on-surface">SCD</div>
+      <p class="text-label-caps font-label-caps text-on-surface-variant">© 2026 Semahattin Can Doruk</p>
+    </div>
+    <div class="flex space-x-gutter">
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps"
+         href="https://github.com/CanDorukk" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps"
+         href="https://www.linkedin.com/in/candorukk" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <button type="button" id="resume-btn-footer"
+              class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps"
+              data-i18n="footer.resume">Resume</button>
+    </div>
+    <div class="text-center md:text-right">
+      <p class="text-body-md text-on-surface-variant" data-i18n-html="footer.credit">Designed &amp; Developed by <span class="text-on-surface font-bold">Semahattin Can Doruk</span></p>
+    </div>
+  </div>
+</footer>
+
+<div id="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title" aria-hidden="true">
+  <div class="glass-card w-full max-w-md rounded-3xl p-stack-md md:p-stack-lg relative">
+    <button type="button" id="cv-modal-close" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface p-1" aria-label="Close">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <h3 id="cv-modal-title" class="text-headline-sm font-headline-sm text-on-surface mb-2 pr-8" data-i18n="cv.title">Download Resume</h3>
+    <p class="text-body-md text-on-surface-variant mb-stack-md" data-i18n="cv.sub">Choose a language to open the CV.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <a href="assets/CV_EN.pdf" target="_blank" rel="noopener noreferrer" data-cv-choice
+         class="glass-card rounded-2xl p-5 text-center hover:border-primary/40 group no-underline">
+        <span class="material-symbols-outlined text-primary text-3xl mb-2">description</span>
+        <p class="font-bold text-on-surface group-hover:text-primary transition-colors">English</p>
+        <p class="text-label-caps text-outline mt-1">Software Developer CV</p>
+      </a>
+      <a href="assets/CV_TR.pdf" target="_blank" rel="noopener noreferrer" data-cv-choice
+         class="glass-card rounded-2xl p-5 text-center hover:border-primary/40 group no-underline">
+        <span class="material-symbols-outlined text-primary text-3xl mb-2">description</span>
+        <p class="font-bold text-on-surface group-hover:text-primary transition-colors">Türkçe</p>
+        <p class="text-label-caps text-outline mt-1">Yazılım Geliştirici CV</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="assets/i18n.js"></script>
+<script>
+(function () {
+  const canvas = document.getElementById('shader-canvas');
+  if (!canvas) return;
+
+  function syncSize() {
+    const w = canvas.clientWidth || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+void main() {
+  vec2 uv = v_texCoord;
+  float noise1 = sin(uv.x * 3.0 + u_time * 0.2) * cos(uv.y * 2.0 + u_time * 0.1);
+  float noise2 = sin(uv.y * 4.0 - u_time * 0.15) * cos(uv.x * 5.0 + u_time * 0.3);
+  vec3 color1 = vec3(0.02, 0.08, 0.14);
+  vec3 color2 = vec3(0.31, 0.27, 0.9);
+  vec3 color3 = vec3(0.05, 0.05, 0.1);
+  float mixFactor = clamp((noise1 + noise2) * 0.5 + 0.5, 0.0, 1.0);
+  vec3 finalColor = mix(color1, mix(color2, color3, uv.y), mixFactor * 0.2);
+  gl_FragColor = vec4(finalColor, 1.0);
+}`;
+
+  function createShader(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+
+  const prog = gl.createProgram();
+  gl.attachShader(prog, createShader(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, createShader(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+<script>
+(function () {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
+
+  function closeMenu() {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    icon.textContent = 'menu';
+  }
+
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    icon.textContent = open ? 'close' : 'menu';
+  });
+
+  document.querySelectorAll('[data-mobile-link]').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  let currentLang = localStorage.getItem('scd-lang') || 'en';
+  const dict = window.SCD_I18N || { en: {}, tr: {} };
+
+  function applyLanguage(lang) {
+    currentLang = lang === 'tr' ? 'tr' : 'en';
+    localStorage.setItem('scd-lang', currentLang);
+    document.documentElement.lang = currentLang;
+    const t = dict[currentLang] || {};
+
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] != null) el.textContent = t[key];
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-html');
+      if (t[key] != null) el.innerHTML = t[key];
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (t[key] != null) el.setAttribute('placeholder', t[key]);
+    });
+
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
+    });
+  }
+
+  document.querySelectorAll('.lang-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      applyLanguage(btn.getAttribute('data-lang'));
+      closeMenu();
+    });
+  });
+
+  function openCvModal() {
+    const cvModal = document.getElementById('cv-modal');
+    cvModal.classList.add('open');
+    cvModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeMenu();
+  }
+
+  function closeCvModal() {
+    const cvModal = document.getElementById('cv-modal');
+    cvModal.classList.remove('open');
+    cvModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  ['resume-btn', 'resume-btn-mobile', 'resume-btn-footer'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', openCvModal);
+  });
+
+  document.getElementById('cv-modal-close').addEventListener('click', closeCvModal);
+  document.getElementById('cv-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'cv-modal') closeCvModal();
+  });
+  document.querySelectorAll('[data-cv-choice]').forEach((link) => {
+    link.addEventListener('click', () => closeCvModal());
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.getElementById('cv-modal').classList.contains('open')) {
+      closeCvModal();
+    }
+  });
+
+  applyLanguage(currentLang);
+
+  const sections = ['hero', 'projects', 'about', 'contact'];
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function updateActiveNav() {
+    const scrollY = window.scrollY + 120;
+    let current = 'hero';
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollY) current = id;
+    });
+    navLinks.forEach((link) => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
+
+  document.getElementById('contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const btn = document.getElementById('form-submit-btn');
+    const status = document.getElementById('form-status');
+    const t = (window.SCD_I18N && window.SCD_I18N[currentLang]) || {};
+
+    const name = document.getElementById('full-name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    btn.disabled = true;
+    btn.classList.add('opacity-70', 'cursor-not-allowed');
+    status.className = 'text-label-caps text-center min-h-[16px] text-on-surface-variant';
+    status.textContent = t['form.sending'] || 'Sending...';
+
+    try {
+      // Must be opened via https://candorukk.github.io (not file://)
+      const res = await fetch('https://formsubmit.co/ajax/semahattincandoruk@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          subject,
+          message,
+          _subject: 'Portfolio: ' + subject,
+          _replyto: email,
+          _template: 'table'
+        })
+      });
+
+      const data = await res.json().catch(() => ({}));
+      const ok = data.success === true || data.success === 'true';
+      if (!res.ok || !ok) {
+        const apiMsg = (data && data.message) ? String(data.message) : '';
+        if (/activation/i.test(apiMsg)) {
+          throw new Error('ACTIVATE');
+        }
+        if (/web server|HTML files/i.test(apiMsg)) {
+          throw new Error('LOCAL');
+        }
+        throw new Error(apiMsg || 'FAILED');
+      }
+
+      status.className = 'text-label-caps text-center min-h-[16px] text-primary';
+      status.textContent = t['form.success'] || 'Message sent successfully.';
+      form.reset();
+    } catch (err) {
+      status.className = 'text-label-caps text-center min-h-[16px] text-error';
+      if (err && err.message === 'ACTIVATE') {
+        status.textContent = t['form.activate'] || 'Check your Gmail and click the FormSubmit activation link, then try again.';
+      } else if (err && err.message === 'LOCAL') {
+        status.textContent = t['form.local'] || 'Open the live site (candorukk.github.io) to send messages.';
+      } else {
+        status.textContent = t['form.error'] || 'Could not send. Please try again or email me directly.';
+      }
+    } finally {
+      btn.disabled = false;
+      btn.classList.remove('opacity-70', 'cursor-not-allowed');
+    }
+  });
+})();
+</script>
+</body>
+</html>
