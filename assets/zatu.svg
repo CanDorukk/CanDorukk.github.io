@@ -10,6 +10,6 @@
     <path d="M0 90 H640 M0 180 H640 M0 270 H640"/>
   </g>
   <text x="48" y="180" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="700" fill="#ffffff" letter-spacing="4">ZATU</text>
-  <text x="50" y="214" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" fill="#d6c9f5">zatu.com.tr · Kurumsal web sitesi</text>
+  <text x="50" y="214" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" fill="#d6c9f5">Afet hazırlık uygulaması · zatu.com.tr</text>
   <circle cx="560" cy="70" r="8" fill="#c4b5fd"/>
 </svg>
