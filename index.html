@@ -244,7 +244,7 @@ tailwind.config = {
     <div class="mb-8">
       <div class="flex items-baseline justify-between">
         <h2 class="text-2xl md:text-3xl font-semibold tracking-tight" data-i18n="work.title">Projects</h2>
-        <span class="text-sm text-muted"><span id="work-count">8</span> <span data-i18n="work.unit">projects</span></span>
+        <span class="text-sm text-muted"><span id="work-count">9</span> <span data-i18n="work.unit">projects</span></span>
       </div>
       <div class="mt-5 flex flex-wrap gap-2" id="work-filters" role="group" aria-label="Filter projects">
         <button type="button" class="filter-btn active" data-filter="all" data-i18n="filter.all">All</button>
@@ -287,6 +287,22 @@ tailwind.config = {
           </div>
         </div>
       </div>
+
+      <a href="https://play.google.com/store/apps/details?id=com.drkapps.habitlydaily" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+        <div class="aspect-video overflow-hidden bg-surface">
+          <img class="w-full h-full object-cover" alt="Habitly Daily" src="assets/img/projects/HabitlyDailyMockup.png" loading="lazy"/>
+        </div>
+        <div class="p-5 flex flex-col flex-grow">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Habitly Daily</h3>
+            <span class="material-symbols-outlined text-[18px] text-muted">arrow_outward</span>
+          </div>
+          <p class="text-sm text-muted mt-2 flex-grow" data-i18n="p.habitly">A habit and routine tracker with built-in alarms. Set daily goals for things like water, coffee, or medication, keep your streaks going, and get smart or interval reminders with custom alarm sounds and quiet hours. Detailed analytics show your progress over time. Published on Google Play.</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="chip">Flutter</span><span class="chip">Riverpod</span><span class="chip">Hive</span>
+          </div>
+        </div>
+      </a>
 
       <a href="https://github.com/CanDorukk/QuizArea" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
         <div class="aspect-video overflow-hidden bg-surface">
