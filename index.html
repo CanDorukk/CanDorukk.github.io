@@ -111,6 +111,19 @@ tailwind.config = {
     white-space: nowrap;
   }
 
+  .filter-btn {
+    padding: 5px 14px;
+    border-radius: 9999px;
+    border: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--muted);
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+  .filter-btn:hover { color: var(--ink); }
+  .filter-btn.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+  .hide { display: none !important; }
+
   .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
   .reveal.visible { opacity: 1; transform: none; }
 
@@ -228,14 +241,22 @@ tailwind.config = {
 
   <!-- Work -->
   <section class="max-w-content mx-auto px-5 md:px-8 py-16 md:py-24" id="work">
-    <div class="flex items-baseline justify-between mb-10">
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight" data-i18n="work.title">Selected Work</h2>
-      <span class="text-sm text-muted" data-i18n="work.count">8 projects</span>
+    <div class="mb-8">
+      <div class="flex items-baseline justify-between">
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight" data-i18n="work.title">Projects</h2>
+        <span class="text-sm text-muted"><span id="work-count">8</span> <span data-i18n="work.unit">projects</span></span>
+      </div>
+      <div class="mt-5 flex flex-wrap gap-2" id="work-filters" role="group" aria-label="Filter projects">
+        <button type="button" class="filter-btn active" data-filter="all" data-i18n="filter.all">All</button>
+        <button type="button" class="filter-btn" data-filter="web" data-i18n="filter.web">Web</button>
+        <button type="button" class="filter-btn" data-filter="mobile" data-i18n="filter.mobile">Mobile</button>
+        <button type="button" class="filter-btn" data-filter="iot" data-i18n="filter.iot">IoT</button>
+      </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 
-      <a href="https://zatu.com.tr" target="_blank" rel="noopener noreferrer" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+      <a href="https://zatu.com.tr" target="_blank" rel="noopener noreferrer" data-cat="web" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
         <div class="aspect-video overflow-hidden bg-surface">
           <img class="w-full h-full object-cover" alt="ZATU website" src="assets/img/projects/zatu.png" loading="lazy"/>
         </div>
@@ -251,7 +272,7 @@ tailwind.config = {
         </div>
       </a>
 
-      <div class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+      <div data-cat="web" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
         <div class="aspect-video overflow-hidden bg-surface">
           <img class="w-full h-full object-cover" alt="AFKOR website" src="assets/img/projects/afkor.png" loading="lazy"/>
         </div>
@@ -267,7 +288,7 @@ tailwind.config = {
         </div>
       </div>
 
-      <a href="https://github.com/CanDorukk/QuizArea" target="_blank" rel="noopener noreferrer" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+      <a href="https://github.com/CanDorukk/QuizArea" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
         <div class="aspect-video overflow-hidden bg-surface">
           <img class="w-full h-full object-cover" alt="QuizArea" src="assets/img/projects/quizarea.jpg" loading="lazy"/>
         </div>
@@ -283,7 +304,7 @@ tailwind.config = {
         </div>
       </a>
 
-      <a href="https://github.com/CanDorukk/agromora" target="_blank" rel="noopener noreferrer" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+      <a href="https://github.com/CanDorukk/agromora" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
         <div class="aspect-video overflow-hidden bg-surface">
           <img class="w-full h-full object-cover" alt="AgroMora" src="assets/img/projects/agromora.jpg" loading="lazy"/>
         </div>
@@ -299,7 +320,7 @@ tailwind.config = {
         </div>
       </a>
 
-      <div class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+      <div data-cat="mobile iot" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
         <div class="aspect-video overflow-hidden bg-surface">
           <img class="w-full h-full object-cover" alt="SmartSprinkler" src="assets/img/projects/smartsprinkler.jpg" loading="lazy"/>
         </div>
@@ -312,7 +333,7 @@ tailwind.config = {
         </div>
       </div>
 
-      <a href="https://github.com/CanDorukk/Voice2Note-AI" target="_blank" rel="noopener noreferrer" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+      <a href="https://github.com/CanDorukk/Voice2Note-AI" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
         <div class="aspect-video overflow-hidden bg-surface">
           <img class="w-full h-full object-cover" alt="Voice2Note AI" src="assets/img/projects/voice2note.jpg" loading="lazy"/>
         </div>
@@ -328,7 +349,7 @@ tailwind.config = {
         </div>
       </a>
 
-      <a href="https://github.com/CanDorukk/CrestBalanceW-Web-Introduction" target="_blank" rel="noopener noreferrer" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+      <a href="https://github.com/CanDorukk/CrestBalanceW-Web-Introduction" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
         <div class="aspect-video overflow-hidden bg-surface">
           <img class="w-full h-full object-cover" alt="CrestBalance" src="assets/img/projects/crestbalance.jpg" loading="lazy"/>
         </div>
@@ -344,7 +365,7 @@ tailwind.config = {
         </div>
       </a>
 
-      <a href="https://github.com/CanDorukk/BagisYap" target="_blank" rel="noopener noreferrer" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+      <a href="https://github.com/CanDorukk/BagisYap" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
         <div class="aspect-video overflow-hidden bg-surface">
           <img class="w-full h-full object-cover" alt="BağışYap" src="assets/img/projects/bagisyap.jpg" loading="lazy"/>
         </div>
@@ -587,6 +608,25 @@ tailwind.config = {
     entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  // Project filter
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var projectCards = document.querySelectorAll('#work .card');
+  var workCount = document.getElementById('work-count');
+  function applyFilter(f) {
+    var shown = 0;
+    projectCards.forEach(function (c) {
+      var cats = (c.getAttribute('data-cat') || '').split(' ');
+      var show = f === 'all' || cats.indexOf(f) !== -1;
+      c.classList.toggle('hide', !show);
+      if (show) shown++;
+    });
+    if (workCount) workCount.textContent = shown;
+    filterBtns.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-filter') === f); });
+  }
+  filterBtns.forEach(function (b) {
+    b.addEventListener('click', function () { applyFilter(b.getAttribute('data-filter')); });
+  });
 
   // i18n
   var dict = window.SCD_I18N || { en: {}, tr: {} };
