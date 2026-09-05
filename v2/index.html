@@ -4,14 +4,14 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Semahattin Can Doruk — Software Developer</title>
-<meta name="description" content="Semahattin Can Doruk — Software Developer (Flutter · C# · Embedded Systems). From mobile apps to the embedded boards underneath them: a story told in five chapters."/>
-<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)"/>
-<meta name="theme-color" content="#0c0b09" media="(prefers-color-scheme: dark)"/>
-<link rel="canonical" href="https://candorukk.github.io/"/>
+<meta name="description" content="Semahattin Can Doruk — Software Developer (Flutter · C# · Embedded Systems). Portfolio of mobile, desktop, web, and IoT projects."/>
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)"/>
+<link rel="canonical" href="https://candorukk.github.io/v2/"/>
 <meta property="og:title" content="Semahattin Can Doruk — Software Developer"/>
-<meta property="og:description" content="Screen to circuit — mobile, desktop, web, and embedded systems, told as one story."/>
+<meta property="og:description" content="Software Developer · Flutter • C# • Embedded Systems"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://candorukk.github.io/"/>
+<meta property="og:url" content="https://candorukk.github.io/v2/"/>
 <meta property="og:image" content="https://candorukk.github.io/assets/img/hero.png"/>
 
 <script>
@@ -26,8 +26,8 @@
 </script>
 
 <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 
 <script id="tailwind-config">
 tailwind.config = {
@@ -45,10 +45,9 @@ tailwind.config = {
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Arial", "sans-serif"],
-        display: ["Fraunces", "ui-serif", "Georgia", "serif"],
         mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"]
       },
-      maxWidth: { content: "1180px" }
+      maxWidth: { content: "1120px" }
     }
   }
 };
@@ -56,40 +55,26 @@ tailwind.config = {
 
 <style>
   :root {
-    --bg: #f7f5f0;
-    --surface: #ffffff;
-    --line: #e6e1d6;
-    --ink: #18150f;
-    --muted: #6b6255;
-    --accent: #d1560d;
-    --accent-ink: #fff8f0;
+    --bg: #ffffff;
+    --surface: #f6f6f7;
+    --line: #e5e5e7;
+    --ink: #17181c;
+    --muted: #5f636b;
+    --accent: #2563eb;
+    --accent-ink: #ffffff;
   }
   html.dark {
-    --bg: #0c0b09;
-    --surface: #15130f;
-    --line: #2a2620;
-    --ink: #f4efe4;
-    --muted: #a49a89;
-    --accent: #ff8a3d;
-    --accent-ink: #0c0b09;
+    --bg: #0b0d10;
+    --surface: #121519;
+    --line: #23262d;
+    --ink: #ededee;
+    --muted: #9aa0a8;
+    --accent: #7aa2ff;
+    --accent-ink: #0b0d10;
   }
 
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--ink); }
-  ::selection { background: color-mix(in srgb, var(--accent) 30%, transparent); }
-
-  /* Faint circuit-board texture used behind the hero and section dividers */
-  .circuit-bg {
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 42px 42px;
-    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 85%);
-    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 85%);
-    opacity: .55;
-  }
-
-  .kicker { font-family: 'JetBrains Mono', monospace; letter-spacing: .06em; }
 
   .link-underline {
     background-image: linear-gradient(var(--accent), var(--accent));
@@ -100,8 +85,22 @@ tailwind.config = {
   }
   .link-underline:hover { background-size: 100% 1px; }
 
-  .card { transition: border-color 0.25s ease, transform 0.25s ease; }
-  .card:hover { border-color: color-mix(in srgb, var(--accent) 55%, transparent); transform: translateY(-3px); }
+  .nav-link.active { color: var(--ink); }
+  .nav-link.active::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: var(--accent);
+    margin-top: 3px;
+  }
+
+  .card {
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+  .card:hover {
+    border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+    transform: translateY(-3px);
+  }
 
   .chip {
     border: 1px solid var(--line);
@@ -113,51 +112,23 @@ tailwind.config = {
   }
 
   .filter-btn {
-    padding: 5px 14px; border-radius: 9999px; border: 1px solid var(--line);
-    font-size: 13px; color: var(--muted);
+    padding: 5px 14px;
+    border-radius: 9999px;
+    border: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--muted);
     transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
   }
   .filter-btn:hover { color: var(--ink); }
   .filter-btn.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
   .hide { display: none !important; }
 
-  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
   .reveal.visible { opacity: 1; transform: none; }
 
-  /* Chapter rail (desktop) */
-  #chapter-rail { position: fixed; left: 22px; top: 50%; transform: translateY(-50%); z-index: 40; }
-  #chapter-rail ol { display: flex; flex-direction: column; gap: 18px; align-items: center; }
-  #chapter-rail button {
-    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted);
-    width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
-    border-radius: 9999px; border: 1px solid transparent; transition: all .25s ease;
-  }
-  #chapter-rail button:hover { color: var(--ink); }
-  #chapter-rail button.active { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
-  #chapter-rail .rail-line { width: 1px; height: 34px; background: var(--line); margin: -8px auto; }
-
-  /* Scroll progress */
-  #scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: var(--accent); z-index: 60; width: 0%; }
-
-  /* Marquee stats belt */
-  .marquee { overflow: hidden; white-space: nowrap; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .marquee-track { display: inline-flex; animation: marquee 32s linear infinite; }
-  .marquee:hover .marquee-track { animation-play-state: paused; }
-  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-  /* Timeline rail */
-  .tl-line { position: relative; }
-  .tl-line::before {
-    content: ""; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1px;
-    background: var(--line);
-  }
-  .tl-dot {
-    position: absolute; left: 0; top: 6px; width: 11px; height: 11px; border-radius: 9999px;
-    background: var(--bg); border: 2px solid var(--accent);
-  }
-
-  #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-  #mobile-menu.open { max-height: 640px; }
+  #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  #mobile-menu.open { max-height: 460px; }
 
   #cv-modal { display: none; position: fixed; inset: 0; z-index: 100; align-items: center; justify-content: center; padding: 20px; background: color-mix(in srgb, var(--ink) 45%, transparent); backdrop-filter: blur(4px); }
   #cv-modal.open { display: flex; }
@@ -173,41 +144,22 @@ tailwind.config = {
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
-    .marquee-track { animation: none; }
-  }
-
-  @media (max-width: 1023px) {
-    #chapter-rail { display: none; }
   }
 </style>
 </head>
 <body class="font-sans antialiased selection:bg-accent/25">
 
-<div id="scroll-progress"></div>
-
-<!-- Chapter rail (desktop only) -->
-<nav id="chapter-rail" aria-label="Chapters">
-  <ol>
-    <li><button type="button" data-rail="top" aria-label="Intro">00</button></li>
-    <li class="rail-line"></li>
-    <li><button type="button" data-rail="story" aria-label="Background">01</button></li>
-    <li class="rail-line"></li>
-    <li><button type="button" data-rail="craft" aria-label="Skills">02</button></li>
-    <li class="rail-line"></li>
-    <li><button type="button" data-rail="work" aria-label="Projects">03</button></li>
-    <li class="rail-line"></li>
-    <li><button type="button" data-rail="journey" aria-label="Experience">04</button></li>
-    <li class="rail-line"></li>
-    <li><button type="button" data-rail="contact" aria-label="Contact">05</button></li>
-  </ol>
-</nav>
-
-<!-- Top bar -->
-<header class="fixed top-0 inset-x-0 z-50 bg-bg/80 backdrop-blur border-b border-line">
+<!-- Nav -->
+<nav class="fixed top-0 inset-x-0 z-50 bg-bg/80 backdrop-blur border-b border-line">
   <div class="max-w-content mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
-    <a href="#top" class="font-display font-semibold tracking-tight text-[16px]">Can Doruk</a>
+    <a href="#top" class="font-semibold tracking-tight text-[15px]">Semahattin Can Doruk</a>
 
-    <div class="hidden md:flex items-center gap-6 text-sm text-muted">
+    <div class="hidden md:flex items-center gap-7 text-sm text-muted">
+      <a class="nav-link hover:text-ink transition-colors" href="#work" data-i18n="nav.work">Work</a>
+      <a class="nav-link hover:text-ink transition-colors" href="#about" data-i18n="nav.about">About</a>
+      <a class="nav-link hover:text-ink transition-colors" href="#experience" data-i18n="nav.experience">Experience</a>
+      <a class="nav-link hover:text-ink transition-colors" href="#contact" data-i18n="nav.contact">Contact</a>
+      <button type="button" id="resume-btn" class="text-ink border border-line rounded-full px-4 py-1.5 hover:border-accent transition-colors" data-i18n="nav.resume">Résumé</button>
       <div class="seg" role="group" aria-label="Language">
         <button type="button" data-lang="tr">TR</button>
         <button type="button" class="active" data-lang="en">EN</button>
@@ -215,28 +167,27 @@ tailwind.config = {
       <button type="button" id="theme-toggle" class="text-muted hover:text-ink transition-colors" aria-label="Toggle theme">
         <span class="material-symbols-outlined text-[20px] align-middle" id="theme-icon">dark_mode</span>
       </button>
+
       <div class="relative" id="settings-wrap">
         <button type="button" id="settings-toggle" class="text-muted hover:text-ink transition-colors" aria-label="Settings" aria-haspopup="true" aria-expanded="false">
           <span class="material-symbols-outlined text-[20px] align-middle">settings</span>
         </button>
         <div id="settings-menu" class="hidden absolute right-0 mt-3 w-56 bg-bg border border-line rounded-xl p-1.5 shadow-lg">
           <p class="px-3 py-2 text-xs font-mono text-muted" data-i18n="ver.label">Site version</p>
-          <a href="./" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-surface">
-            <span>v.3 <span class="text-muted" data-i18n="ver.current">— this version</span></span>
-            <span class="material-symbols-outlined text-[18px] text-accent">check</span>
-          </a>
-          <a href="v2/" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-surface">
-            <span>v.2 <span class="text-muted" data-i18n="ver.old">— previous site</span></span>
+          <a href="../" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-surface">
+            <span>v.3 <span class="text-muted" data-i18n="ver.new">— latest</span></span>
             <span class="material-symbols-outlined text-[18px] text-muted">arrow_outward</span>
           </a>
-          <a href="v1/" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-surface">
+          <a href="./" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-surface">
+            <span>v.2 <span class="text-muted" data-i18n="ver.current">— this version</span></span>
+            <span class="material-symbols-outlined text-[18px] text-accent">check</span>
+          </a>
+          <a href="../v1/" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm hover:bg-surface">
             <span>v.1 <span class="text-muted" data-i18n="ver.old">— previous site</span></span>
             <span class="material-symbols-outlined text-[18px] text-muted">arrow_outward</span>
           </a>
         </div>
       </div>
-      <button type="button" id="resume-btn" class="text-ink border border-line rounded-full px-4 py-1.5 hover:border-accent transition-colors" data-i18n="nav.resume">Résumé</button>
-      <a href="#contact" class="bg-accent text-accent-ink rounded-full px-4 py-1.5 font-medium hover:opacity-90 transition-opacity" data-i18n="nav.contact">Contact</a>
     </div>
 
     <button id="menu-toggle" class="md:hidden p-2 -mr-2" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -245,16 +196,15 @@ tailwind.config = {
   </div>
 
   <div id="mobile-menu" class="md:hidden border-t border-line bg-bg">
-    <div class="flex flex-col px-5 py-4 gap-1 text-sm">
-      <a href="#story" data-mobile-link class="py-2.5 flex items-baseline gap-3"><span class="kicker text-accent text-xs">01</span><span data-i18n="nav.story">Background</span></a>
-      <a href="#craft" data-mobile-link class="py-2.5 flex items-baseline gap-3"><span class="kicker text-accent text-xs">02</span><span data-i18n="nav.craft">Skills</span></a>
-      <a href="#work" data-mobile-link class="py-2.5 flex items-baseline gap-3"><span class="kicker text-accent text-xs">03</span><span data-i18n="nav.work">Work</span></a>
-      <a href="#journey" data-mobile-link class="py-2.5 flex items-baseline gap-3"><span class="kicker text-accent text-xs">04</span><span data-i18n="nav.journey">Experience</span></a>
-      <a href="#contact" data-mobile-link class="py-2.5 flex items-baseline gap-3"><span class="kicker text-accent text-xs">05</span><span data-i18n="nav.contact">Contact</span></a>
-      <button type="button" id="resume-btn-mobile" class="text-left text-ink py-2.5" data-i18n="nav.resume">Résumé</button>
-      <a href="v2/" class="text-left text-muted hover:text-ink transition-colors py-2.5"><span data-i18n="ver.old">— previous site</span> (v.2)</a>
-      <a href="v1/" class="text-left text-muted hover:text-ink transition-colors py-2.5"><span data-i18n="ver.old">— previous site</span> (v.1)</a>
-      <div class="flex items-center justify-between pt-3 mt-2 border-t border-line">
+    <div class="flex flex-col px-5 py-4 gap-4 text-sm">
+      <a href="#work" data-mobile-link data-i18n="nav.work">Work</a>
+      <a href="#about" data-mobile-link data-i18n="nav.about">About</a>
+      <a href="#experience" data-mobile-link data-i18n="nav.experience">Experience</a>
+      <a href="#contact" data-mobile-link data-i18n="nav.contact">Contact</a>
+      <button type="button" id="resume-btn-mobile" class="text-left text-ink" data-i18n="nav.resume">Résumé</button>
+      <a href="../" class="text-left text-muted hover:text-ink transition-colors"><span data-i18n="ver.new">— latest</span> (v.3)</a>
+      <a href="../v1/" class="text-left text-muted hover:text-ink transition-colors"><span data-i18n="ver.old">— previous site</span> (v.1)</a>
+      <div class="flex items-center justify-between pt-1">
         <div class="seg" role="group" aria-label="Language">
           <button type="button" data-lang="tr">TR</button>
           <button type="button" class="active" data-lang="en">EN</button>
@@ -265,159 +215,40 @@ tailwind.config = {
       </div>
     </div>
   </div>
-</header>
+</nav>
 
 <main id="top" class="pt-16">
 
-  <!-- 00 — Hero -->
-  <section class="relative max-w-content mx-auto px-5 md:px-8 pt-24 pb-20 md:pt-36 md:pb-32 overflow-hidden" id="hero">
-    <div class="circuit-bg absolute inset-0 -z-10 pointer-events-none"></div>
-
-    <p class="kicker text-sm text-accent mb-6" data-i18n="hero.kicker">Software Developer</p>
-
-    <h1 class="font-display font-medium tracking-tight leading-[1.05] text-5xl md:text-7xl max-w-4xl">
-      <span class="block reveal" data-i18n="hero.h1a">Building end-to-end software across</span>
-      <span class="block text-muted reveal" data-i18n="hero.h1b">mobile, desktop, web, and embedded systems.</span>
+  <!-- Hero -->
+  <section class="max-w-content mx-auto px-5 md:px-8 pt-20 pb-16 md:pt-28 md:pb-24">
+    <p class="text-sm font-mono text-accent mb-5" data-i18n="hero.kicker">Software Developer</p>
+    <h1 class="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] max-w-4xl">
+      <span data-i18n="hero.h1a">Building end-to-end software across</span>
+      <span class="text-muted" data-i18n="hero.h1b">mobile, desktop, web, and embedded systems.</span>
     </h1>
-
-    <p class="mt-7 text-lg text-muted max-w-2xl reveal" data-i18n="hero.lead">
+    <p class="mt-6 text-lg text-muted max-w-2xl" data-i18n="hero.lead">
       I design and ship products from UI to hardware — with a focus on system design, multithreading, and reliable hardware–software integration.
     </p>
 
-    <div class="mt-9 flex flex-wrap gap-3 reveal">
+    <div class="mt-8 flex flex-wrap gap-3">
       <a href="#work" class="bg-ink text-bg rounded-full px-5 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity" data-i18n="hero.ctaWork">View projects</a>
       <a href="#contact" class="border border-line rounded-full px-5 py-2.5 text-sm font-medium hover:border-accent transition-colors" data-i18n="hero.ctaContact">Get in touch</a>
     </div>
 
-    <div class="mt-14 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted reveal">
+    <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted">
       <a class="link-underline hover:text-ink transition-colors" href="https://github.com/CanDorukk" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a class="link-underline hover:text-ink transition-colors" href="https://www.linkedin.com/in/candorukk" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a class="link-underline hover:text-ink transition-colors" href="mailto:semahattincandoruk@gmail.com">semahattincandoruk@gmail.com</a>
     </div>
-
-    <button type="button" id="scroll-cue" class="mt-16 flex items-center gap-2 text-xs text-muted kicker hover:text-ink transition-colors reveal">
-      <span data-i18n="hero.scroll">Scroll to start the story</span>
-      <span class="material-symbols-outlined text-[16px] animate-bounce">south</span>
-    </button>
-  </section>
-
-  <!-- Stats marquee -->
-  <div class="marquee text-sm text-muted py-3">
-    <div class="marquee-track kicker">
-      <span class="px-6" data-i18n="marquee.1">9+ Projects</span>
-      <span class="px-6 text-accent">/</span>
-      <span class="px-6" data-i18n="marquee.2">5 Roles &amp; internships</span>
-      <span class="px-6 text-accent">/</span>
-      <span class="px-6" data-i18n="marquee.3">Mobile · Desktop · Embedded · Web</span>
-      <span class="px-6 text-accent">/</span>
-      <span class="px-6" data-i18n="marquee.4">English C1</span>
-      <span class="px-6 text-accent">/</span>
-      <span class="px-6" data-i18n="marquee.5">Erasmus+ — Portugal, Spring 2026</span>
-      <span class="px-6 text-accent">/</span>
-      <span class="px-6" data-i18n="marquee.1">9+ Projects</span>
-      <span class="px-6 text-accent">/</span>
-      <span class="px-6" data-i18n="marquee.2">5 Roles &amp; internships</span>
-      <span class="px-6 text-accent">/</span>
-      <span class="px-6" data-i18n="marquee.3">Mobile · Desktop · Embedded · Web</span>
-      <span class="px-6 text-accent">/</span>
-      <span class="px-6" data-i18n="marquee.4">English C1</span>
-      <span class="px-6 text-accent">/</span>
-      <span class="px-6" data-i18n="marquee.5">Erasmus+ — Portugal, Spring 2026</span>
-    </div>
-  </div>
-
-  <!-- 01 — Background -->
-  <section class="max-w-content mx-auto px-5 md:px-8 py-20 md:py-28" id="story">
-    <p class="kicker text-sm text-accent mb-4 reveal" data-i18n="story.kicker">01 — Background</p>
-    <div class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-16">
-      <h2 class="font-display font-medium text-3xl md:text-4xl tracking-tight reveal" data-i18n="story.title">Background</h2>
-      <div class="space-y-5 text-lg text-muted">
-        <p class="reveal" data-i18n="story.p1">B.Sc. in Information Systems and Technologies from Muş Alparslan University (GPA 3.03 / 4.00), including an Erasmus+ exchange at the University of Beira Interior, Portugal.</p>
-
-        <div class="pt-6 tl-line space-y-8 text-sm">
-          <div class="relative pl-8 reveal">
-            <span class="tl-dot"></span>
-            <span class="kicker text-xs text-accent" data-i18n="story.tl1.date">2016 – 2020</span>
-            <p class="text-ink font-medium mt-0.5" data-i18n="story.tl1.title">Web Design &amp; Programming</p>
-            <p class="text-muted" data-i18n="story.tl1.place">Yahya Günsür Vocational and Technical Anatolian High School</p>
-          </div>
-          <div class="relative pl-8 reveal">
-            <span class="tl-dot"></span>
-            <span class="kicker text-xs text-accent" data-i18n="story.tl2.date">2022 – 2026</span>
-            <p class="text-ink font-medium mt-0.5" data-i18n="story.tl2.title">B.Sc. Information Systems &amp; Technologies</p>
-            <p class="text-muted" data-i18n="story.tl2.place">Muş Alparslan University — GPA 3.03 / 4.00</p>
-          </div>
-          <div class="relative pl-8 reveal">
-            <span class="tl-dot"></span>
-            <span class="kicker text-xs text-accent" data-i18n="story.tl3.date">Spring 2026</span>
-            <p class="text-ink font-medium mt-0.5" data-i18n="story.tl3.title">Erasmus+ Exchange Program</p>
-            <p class="text-muted" data-i18n="story.tl3.place">University of Beira Interior, Portugal</p>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <div class="border-t border-line"></div>
 
-  <!-- 02 — Skills -->
-  <section class="max-w-content mx-auto px-5 md:px-8 py-20 md:py-28" id="craft">
-    <p class="kicker text-sm text-accent mb-4 reveal" data-i18n="craft.kicker">02 — Skills</p>
-    <h2 class="font-display font-medium text-3xl md:text-4xl tracking-tight max-w-2xl reveal" data-i18n="craft.title">Skills</h2>
-    <p class="mt-4 text-lg text-muted max-w-2xl reveal" data-i18n="craft.lead">Technologies and tools I use across mobile, desktop, backend, and embedded work.</p>
-
-    <div class="mt-12 divide-y divide-line border-y border-line">
-      <div class="grid grid-cols-1 md:grid-cols-[80px_1fr_1fr] gap-3 md:gap-8 py-8 reveal">
-        <span class="kicker text-2xl text-muted">01</span>
-        <div>
-          <h3 class="font-display text-xl font-medium" data-i18n="craft.1.title">Mobile &amp; Cross-platform</h3>
-          <p class="text-muted mt-2" data-i18n="craft.1.desc">Flutter apps with real architecture behind them — state management, local storage, monetization, and a UI that holds up.</p>
-        </div>
-        <div class="flex flex-wrap gap-2 content-start md:justify-end">
-          <span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Riverpod</span><span class="chip">go_router</span><span class="chip">Hive</span><span class="chip">AdMob</span><span class="chip">In-App Purchase</span>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-[80px_1fr_1fr] gap-3 md:gap-8 py-8 reveal">
-        <span class="kicker text-2xl text-muted">02</span>
-        <div>
-          <h3 class="font-display text-xl font-medium" data-i18n="craft.2.title">Desktop &amp; Embedded Systems</h3>
-          <p class="text-muted mt-2" data-i18n="craft.2.desc">Bridging software and hardware: serial protocols, control interfaces, and cross-platform desktop apps that talk to real devices.</p>
-        </div>
-        <div class="flex flex-wrap gap-2 content-start md:justify-end">
-          <span class="chip">C# WPF</span><span class="chip">Flutter Desktop</span><span class="chip">ESP32</span><span class="chip">Raspberry Pi</span><span class="chip">Jetson Orin Nano</span><span class="chip">ROS</span><span class="chip">UART/Serial</span>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-[80px_1fr_1fr] gap-3 md:gap-8 py-8 reveal">
-        <span class="kicker text-2xl text-muted">03</span>
-        <div>
-          <h3 class="font-display text-xl font-medium" data-i18n="craft.3.title">Backend &amp; Data</h3>
-          <p class="text-muted mt-2" data-i18n="craft.3.desc">Schemas, auth, and real-time data that keep every client in sync — without becoming the bottleneck.</p>
-        </div>
-        <div class="flex flex-wrap gap-2 content-start md:justify-end">
-          <span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">SQLite</span><span class="chip">REST APIs</span><span class="chip">Firebase</span><span class="chip">Firestore</span>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-[80px_1fr_1fr] gap-3 md:gap-8 py-8 reveal">
-        <span class="kicker text-2xl text-muted">04</span>
-        <div>
-          <h3 class="font-display text-xl font-medium" data-i18n="craft.4.title">Design &amp; Tools</h3>
-          <p class="text-muted mt-2" data-i18n="craft.4.desc">Interface design and documentation, alongside everyday office tools.</p>
-        </div>
-        <div class="flex flex-wrap gap-2 content-start md:justify-end">
-          <span class="chip">UI/UX Design</span><span class="chip">Canva</span><span class="chip">Photoshop</span><span class="chip">MS Excel</span><span class="chip">MS Word</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="border-t border-line"></div>
-
-  <!-- 03 — Work -->
-  <section class="max-w-content mx-auto px-5 md:px-8 py-20 md:py-28" id="work">
-    <p class="kicker text-sm text-accent mb-4 reveal" data-i18n="work.kicker">03 — Work</p>
+  <!-- Work -->
+  <section class="max-w-content mx-auto px-5 md:px-8 py-16 md:py-24" id="work">
     <div class="mb-8">
       <div class="flex items-baseline justify-between">
-        <h2 class="font-display font-medium text-3xl md:text-4xl tracking-tight reveal" data-i18n="work.title">Projects</h2>
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight" data-i18n="work.title">Projects</h2>
         <span class="text-sm text-muted"><span id="work-count">9</span> <span data-i18n="work.unit">projects</span></span>
       </div>
       <div class="mt-5 flex flex-wrap gap-2" id="work-filters" role="group" aria-label="Filter projects">
@@ -430,9 +261,9 @@ tailwind.config = {
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 
-      <a href="https://zatu.com.tr" target="_blank" rel="noopener noreferrer" data-cat="web" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal bg-surface">
-        <div class="aspect-video overflow-hidden bg-bg">
-          <img class="w-full h-full object-cover" alt="ZATU website" src="assets/img/projects/zatu.png" loading="lazy"/>
+      <a href="https://zatu.com.tr" target="_blank" rel="noopener noreferrer" data-cat="web" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+        <div class="aspect-video overflow-hidden bg-surface">
+          <img class="w-full h-full object-cover" alt="ZATU website" src="../assets/img/projects/zatu.png" loading="lazy"/>
         </div>
         <div class="p-5 flex flex-col flex-grow">
           <div class="flex items-center justify-between">
@@ -446,9 +277,9 @@ tailwind.config = {
         </div>
       </a>
 
-      <div data-cat="web" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal bg-surface">
-        <div class="aspect-video overflow-hidden bg-bg">
-          <img class="w-full h-full object-cover" alt="AFKOR website" src="assets/img/projects/afkor.png" loading="lazy"/>
+      <div data-cat="web" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+        <div class="aspect-video overflow-hidden bg-surface">
+          <img class="w-full h-full object-cover" alt="AFKOR website" src="../assets/img/projects/afkor.png" loading="lazy"/>
         </div>
         <div class="p-5 flex flex-col flex-grow">
           <div class="flex items-center justify-between">
@@ -462,9 +293,9 @@ tailwind.config = {
         </div>
       </div>
 
-      <a href="https://play.google.com/store/apps/details?id=com.drkapps.habitlydaily" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal bg-surface">
-        <div class="aspect-video overflow-hidden bg-bg">
-          <img class="w-full h-full object-cover" alt="Habitly Daily" src="assets/img/projects/HabitlyDailyMockup.png" loading="lazy"/>
+      <a href="https://play.google.com/store/apps/details?id=com.drkapps.habitlydaily" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+        <div class="aspect-video overflow-hidden bg-surface">
+          <img class="w-full h-full object-cover" alt="Habitly Daily" src="../assets/img/projects/HabitlyDailyMockup.png" loading="lazy"/>
         </div>
         <div class="p-5 flex flex-col flex-grow">
           <div class="flex items-center justify-between">
@@ -478,9 +309,9 @@ tailwind.config = {
         </div>
       </a>
 
-      <a href="https://github.com/CanDorukk/QuizArea" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal bg-surface">
-        <div class="aspect-video overflow-hidden bg-bg">
-          <img class="w-full h-full object-cover" alt="QuizArea" src="assets/img/projects/quizarea.jpg" loading="lazy"/>
+      <a href="https://github.com/CanDorukk/QuizArea" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+        <div class="aspect-video overflow-hidden bg-surface">
+          <img class="w-full h-full object-cover" alt="QuizArea" src="../assets/img/projects/quizarea.jpg" loading="lazy"/>
         </div>
         <div class="p-5 flex flex-col flex-grow">
           <div class="flex items-center justify-between">
@@ -494,9 +325,9 @@ tailwind.config = {
         </div>
       </a>
 
-      <a href="https://github.com/CanDorukk/agromora" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal bg-surface">
-        <div class="aspect-video overflow-hidden bg-bg">
-          <img class="w-full h-full object-cover" alt="AgroMora" src="assets/img/projects/agromora.jpg" loading="lazy"/>
+      <a href="https://github.com/CanDorukk/agromora" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+        <div class="aspect-video overflow-hidden bg-surface">
+          <img class="w-full h-full object-cover" alt="AgroMora" src="../assets/img/projects/agromora.jpg" loading="lazy"/>
         </div>
         <div class="p-5 flex flex-col flex-grow">
           <div class="flex items-center justify-between">
@@ -510,9 +341,9 @@ tailwind.config = {
         </div>
       </a>
 
-      <div data-cat="mobile iot" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal bg-surface">
-        <div class="aspect-video overflow-hidden bg-bg">
-          <img class="w-full h-full object-cover" alt="SmartSprinkler" src="assets/img/projects/smartsprinkler.jpg" loading="lazy"/>
+      <div data-cat="mobile iot" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+        <div class="aspect-video overflow-hidden bg-surface">
+          <img class="w-full h-full object-cover" alt="SmartSprinkler" src="../assets/img/projects/smartsprinkler.jpg" loading="lazy"/>
         </div>
         <div class="p-5 flex flex-col flex-grow">
           <h3 class="font-semibold">SmartSprinkler</h3>
@@ -523,9 +354,9 @@ tailwind.config = {
         </div>
       </div>
 
-      <a href="https://github.com/CanDorukk/Voice2Note-AI" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal bg-surface">
-        <div class="aspect-video overflow-hidden bg-bg">
-          <img class="w-full h-full object-cover" alt="Voice2Note AI" src="assets/img/projects/voice2note.jpg" loading="lazy"/>
+      <a href="https://github.com/CanDorukk/Voice2Note-AI" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+        <div class="aspect-video overflow-hidden bg-surface">
+          <img class="w-full h-full object-cover" alt="Voice2Note AI" src="../assets/img/projects/voice2note.jpg" loading="lazy"/>
         </div>
         <div class="p-5 flex flex-col flex-grow">
           <div class="flex items-center justify-between">
@@ -539,9 +370,9 @@ tailwind.config = {
         </div>
       </a>
 
-      <a href="https://github.com/CanDorukk/CrestBalanceW-Web-Introduction" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal bg-surface">
-        <div class="aspect-video overflow-hidden bg-bg">
-          <img class="w-full h-full object-cover" alt="CrestBalance" src="assets/img/projects/crestbalance.jpg" loading="lazy"/>
+      <a href="https://github.com/CanDorukk/CrestBalanceW-Web-Introduction" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+        <div class="aspect-video overflow-hidden bg-surface">
+          <img class="w-full h-full object-cover" alt="CrestBalance" src="../assets/img/projects/crestbalance.jpg" loading="lazy"/>
         </div>
         <div class="p-5 flex flex-col flex-grow">
           <div class="flex items-center justify-between">
@@ -555,9 +386,9 @@ tailwind.config = {
         </div>
       </a>
 
-      <a href="https://github.com/CanDorukk/BagisYap" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal bg-surface">
-        <div class="aspect-video overflow-hidden bg-bg">
-          <img class="w-full h-full object-cover" alt="BağışYap" src="assets/img/projects/bagisyap.jpg" loading="lazy"/>
+      <a href="https://github.com/CanDorukk/BagisYap" target="_blank" rel="noopener noreferrer" data-cat="mobile" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal">
+        <div class="aspect-video overflow-hidden bg-surface">
+          <img class="w-full h-full object-cover" alt="BağışYap" src="../assets/img/projects/bagisyap.jpg" loading="lazy"/>
         </div>
         <div class="p-5 flex flex-col flex-grow">
           <div class="flex items-center justify-between">
@@ -576,59 +407,85 @@ tailwind.config = {
 
   <div class="border-t border-line"></div>
 
-  <!-- 04 — Experience -->
-  <section class="max-w-content mx-auto px-5 md:px-8 py-20 md:py-28" id="journey">
-    <p class="kicker text-sm text-accent mb-4 reveal" data-i18n="journey.kicker">04 — Experience</p>
-    <h2 class="font-display font-medium text-3xl md:text-4xl tracking-tight max-w-2xl reveal" data-i18n="journey.title">Experience</h2>
+  <!-- About -->
+  <section class="max-w-content mx-auto px-5 md:px-8 py-16 md:py-24" id="about">
+    <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight" data-i18n="about.title">About</h2>
+      </div>
+      <div class="space-y-5 text-lg text-muted">
+        <p data-i18n="about.p1">I deliver end-to-end solutions across mobile, desktop, and embedded systems, with a strong focus on system design and process optimization.</p>
+        <p data-i18n="about.p2">I have hands-on experience troubleshooting complex architectures, optimizing multithreaded structures, and ensuring seamless hardware–software integration.</p>
+        <p data-i18n="about.p3">B.Sc. in Information Systems and Technologies from Muş Alparslan University (GPA 3.03 / 4.00), with an Erasmus+ term at the University of Beira Interior, Portugal.</p>
 
-    <div class="mt-6 max-w-2xl space-y-4 text-lg text-muted">
-      <p class="reveal" data-i18n="about.p1">I deliver end-to-end solutions across mobile, desktop, and embedded systems, with a strong focus on system design and process optimization.</p>
-      <p class="reveal" data-i18n="about.p2">I have hands-on experience troubleshooting complex architectures, optimizing multithreaded structures, and ensuring seamless hardware–software integration.</p>
-    </div>
-
-    <div class="mt-12 tl-line space-y-10 max-w-3xl">
-      <div class="relative pl-9 reveal">
-        <span class="tl-dot"></span>
-        <span class="kicker text-xs text-accent" data-i18n="job.sancaktar.date">Jul 2025 – Mar 2026</span>
-        <h3 class="font-semibold mt-1" data-i18n="job.sancaktar.title">Software Developer — SANCAKTAR Mekatronik</h3>
-        <p class="text-muted mt-1" data-i18n="job.sancaktar.desc">Optimized multithreaded architectures for higher responsiveness; started a Linux/Windows cross-platform transition. Built bidirectional serial communication between the embedded board and desktop app; implemented REST services and database schemas for measurement data.</p>
-      </div>
-      <div class="relative pl-9 reveal">
-        <span class="tl-dot"></span>
-        <span class="kicker text-xs text-accent" data-i18n="job.ugf.date">Jul 2025 – Jan 2026</span>
-        <h3 class="font-semibold mt-1" data-i18n="job.ugf.title">Software Developer (Project-Based) — UGF Makine</h3>
-        <p class="text-muted mt-1" data-i18n="job.ugf.desc">Designed an IoT smart system architecture and Flutter remote-control interfaces. Built a Supabase/PostgreSQL backend for device data and implemented ESP32 Wi-Fi AP for initial device configuration.</p>
-      </div>
-      <div class="relative pl-9 reveal">
-        <span class="tl-dot"></span>
-        <span class="kicker text-xs text-accent" data-i18n="job.nefel.date">Jun 2025 – Aug 2025</span>
-        <h3 class="font-semibold mt-1" data-i18n="job.nefel.title">Software Developer Intern — Nefel Hassas Tarım</h3>
-        <p class="text-muted mt-1" data-i18n="job.nefel.desc">Optimized the autonomous robot UI and control logic; implemented serial command protocols. Designed an end-of-row U-turn navigation algorithm from sensor data and completed ROS setup on Raspberry Pi.</p>
-      </div>
-      <div class="relative pl-9 reveal">
-        <span class="tl-dot"></span>
-        <span class="kicker text-xs text-accent" data-i18n="job.tedx.date">2024 – 2026</span>
-        <h3 class="font-semibold mt-1" data-i18n="job.tedx.title">Team Member — TEDx Alparslan University</h3>
-        <p class="text-muted mt-1" data-i18n="job.tedx.desc">Supported event organization and inter-community communication.</p>
-      </div>
-      <div class="relative pl-9 reveal">
-        <span class="tl-dot"></span>
-        <span class="kicker text-xs text-accent" data-i18n="job.kodland.date">Apr 2024 – Jul 2024</span>
-        <h3 class="font-semibold mt-1" data-i18n="job.kodland.title">Python Instructor (Part-time) — Kodland</h3>
-        <p class="text-muted mt-1" data-i18n="job.kodland.desc">Taught programming fundamentals and algorithmic thinking to primary and high school students.</p>
+        <div class="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-ink">
+          <div>
+            <p class="font-mono text-xs text-accent mb-2" data-i18n="about.exp1">Mobile & Desktop</p>
+            <p class="text-muted">Flutter, Dart, Riverpod, go_router, .NET, WPF, Windows Forms</p>
+          </div>
+          <div>
+            <p class="font-mono text-xs text-accent mb-2" data-i18n="about.exp2">Backend & APIs</p>
+            <p class="text-muted">C#, Python, REST, Supabase, Firebase, PostgreSQL, Firestore</p>
+          </div>
+          <div>
+            <p class="font-mono text-xs text-accent mb-2" data-i18n="about.exp3">Embedded & Concepts</p>
+            <p class="text-muted">ESP32, Raspberry Pi, ROS, UART, MVVM, multithreading</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <div class="border-t border-line"></div>
 
-  <!-- 05 — Contact -->
-  <section class="max-w-content mx-auto px-5 md:px-8 py-20 md:py-28" id="contact">
-    <p class="kicker text-sm text-accent mb-4 reveal" data-i18n="contact.kicker">05 — Contact</p>
+  <!-- Experience -->
+  <section class="max-w-content mx-auto px-5 md:px-8 py-16 md:py-24" id="experience">
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-10" data-i18n="exp.title">Experience</h2>
+    <div class="divide-y divide-line border-y border-line">
+
+      <div class="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-2 md:gap-8 py-6">
+        <span class="text-sm font-mono text-muted" data-i18n="job.sancaktar.date">Jul 2025 – Mar 2026</span>
+        <div>
+          <h3 class="font-semibold" data-i18n="job.sancaktar.title">Software Developer — SANCAKTAR Mekatronik</h3>
+          <p class="text-sm text-muted mt-1" data-i18n="job.sancaktar.desc">Optimized multithreaded architectures for higher responsiveness; started a Linux/Windows cross-platform transition. Built bidirectional serial communication between the embedded board and desktop app; implemented REST services and database schemas for measurement data.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-2 md:gap-8 py-6">
+        <span class="text-sm font-mono text-muted" data-i18n="job.ugf.date">Jul 2025 – Jan 2026</span>
+        <div>
+          <h3 class="font-semibold" data-i18n="job.ugf.title">Software Developer (Project-Based) — UGF Makine</h3>
+          <p class="text-sm text-muted mt-1" data-i18n="job.ugf.desc">Designed an IoT smart system architecture and Flutter remote-control interfaces. Built a Supabase/PostgreSQL backend for device data and implemented ESP32 Wi-Fi AP for initial device configuration.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-2 md:gap-8 py-6">
+        <span class="text-sm font-mono text-muted" data-i18n="job.nefel.date">Jun 2025 – Aug 2025</span>
+        <div>
+          <h3 class="font-semibold" data-i18n="job.nefel.title">Software Developer Intern — Nefel Hassas Tarım</h3>
+          <p class="text-sm text-muted mt-1" data-i18n="job.nefel.desc">Optimized the autonomous robot UI and control logic; implemented serial command protocols. Designed an end-of-row U-turn navigation algorithm from sensor data and completed ROS setup on Raspberry Pi.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-2 md:gap-8 py-6">
+        <span class="text-sm font-mono text-muted" data-i18n="edu.date">2022 – 2026</span>
+        <div>
+          <h3 class="font-semibold" data-i18n="edu.title">B.Sc. Information Systems and Technologies — Muş Alparslan University</h3>
+          <p class="text-sm text-muted mt-1" data-i18n="edu.desc">GPA 3.03 / 4.00 · TEDx community team member · Erasmus at University of Beira Interior (Portugal).</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="border-t border-line"></div>
+
+  <!-- Contact -->
+  <section class="max-w-content mx-auto px-5 md:px-8 py-16 md:py-24" id="contact">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
       <div>
-        <h2 class="font-display font-medium text-3xl md:text-4xl tracking-tight reveal" data-i18n="contact.title">Let's work together</h2>
-        <p class="mt-4 text-lg text-muted max-w-md reveal" data-i18n="contact.lead">Have a project in mind or a role to fill? I'm open to new opportunities and collaborations.</p>
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight" data-i18n="contact.title">Let's work together</h2>
+        <p class="mt-4 text-lg text-muted max-w-md" data-i18n="contact.lead">Have a project in mind or a role to fill? I'm open to new opportunities and collaborations.</p>
         <div class="mt-8 space-y-3 text-sm">
           <a href="mailto:semahattincandoruk@gmail.com" class="link-underline hover:text-ink transition-colors block w-fit">semahattincandoruk@gmail.com</a>
           <a href="https://www.linkedin.com/in/candorukk" target="_blank" rel="noopener noreferrer" class="link-underline hover:text-ink transition-colors block w-fit">linkedin.com/in/candorukk</a>
@@ -675,7 +532,7 @@ tailwind.config = {
 
 <footer class="border-t border-line">
   <div class="max-w-content mx-auto px-5 md:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted">
-    <p>© 2026 Semahattin Can Doruk · <span class="kicker text-xs">v.3</span></p>
+    <p>© 2026 Semahattin Can Doruk</p>
     <div class="flex gap-5">
       <a class="link-underline hover:text-ink transition-colors" href="https://github.com/CanDorukk" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a class="link-underline hover:text-ink transition-colors" href="https://www.linkedin.com/in/candorukk" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -693,12 +550,12 @@ tailwind.config = {
     <h3 id="cv-modal-title" class="font-semibold text-lg pr-8" data-i18n="cv.title">Download résumé</h3>
     <p class="text-sm text-muted mt-1 mb-5" data-i18n="cv.sub">Choose a language.</p>
     <div class="grid grid-cols-2 gap-3">
-      <a href="assets/cv/Semahattin_Can_Doruk_Software_Developer_EN.pdf" target="_blank" rel="noopener noreferrer" data-cv-choice
+      <a href="../assets/cv/Semahattin_Can_Doruk_Software_Developer_EN.pdf" target="_blank" rel="noopener noreferrer" data-cv-choice
          class="border border-line rounded-xl p-4 text-center hover:border-accent transition-colors">
         <span class="material-symbols-outlined text-accent">description</span>
         <p class="font-medium mt-1 text-sm">English</p>
       </a>
-      <a href="assets/cv/Semahattin_Can_Doruk_Software_Developer_TR.pdf" target="_blank" rel="noopener noreferrer" data-cv-choice
+      <a href="../assets/cv/Semahattin_Can_Doruk_Software_Developer_TR.pdf" target="_blank" rel="noopener noreferrer" data-cv-choice
          class="border border-line rounded-xl p-4 text-center hover:border-accent transition-colors">
         <span class="material-symbols-outlined text-accent">description</span>
         <p class="font-medium mt-1 text-sm">Türkçe</p>
@@ -707,7 +564,7 @@ tailwind.config = {
   </div>
 </div>
 
-<script src="assets/js/i18n.js"></script>
+<script src="../assets/js/i18n.js"></script>
 <script>
 (function () {
   var root = document.documentElement;
@@ -773,46 +630,6 @@ tailwind.config = {
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
-  // Scroll progress bar
-  var progress = document.getElementById('scroll-progress');
-  function updateProgress() {
-    var h = document.documentElement;
-    var max = h.scrollHeight - h.clientHeight;
-    var pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
-    if (progress) progress.style.width = pct + '%';
-  }
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  updateProgress();
-
-  // Chapter rail
-  var railBtns = document.querySelectorAll('#chapter-rail button');
-  var chapterIds = ['top', 'story', 'craft', 'work', 'journey', 'contact'];
-  railBtns.forEach(function (b) {
-    b.addEventListener('click', function () {
-      var id = b.getAttribute('data-rail');
-      var el = id === 'top' ? document.getElementById('top') : document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-  function updateRail() {
-    var y = window.scrollY + window.innerHeight * 0.4;
-    var cur = 'top';
-    chapterIds.forEach(function (id) {
-      var el = document.getElementById(id === 'top' ? 'hero' : id);
-      if (el && el.offsetTop <= y) cur = id;
-    });
-    railBtns.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-rail') === cur); });
-  }
-  window.addEventListener('scroll', updateRail, { passive: true });
-  updateRail();
-
-  // Scroll cue jumps to Story
-  var cue = document.getElementById('scroll-cue');
-  if (cue) cue.addEventListener('click', function () {
-    var el = document.getElementById('story');
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-
   // Project filter
   var filterBtns = document.querySelectorAll('.filter-btn');
   var projectCards = document.querySelectorAll('#work .card');
@@ -875,6 +692,21 @@ tailwind.config = {
   cv.addEventListener('click', function (e) { if (e.target === cv) closeCv(); });
   document.querySelectorAll('[data-cv-choice]').forEach(function (l) { l.addEventListener('click', closeCv); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && cv.classList.contains('open')) closeCv(); });
+
+  // Active nav
+  var ids = ['work', 'about', 'experience', 'contact'];
+  var navLinks = document.querySelectorAll('.nav-link');
+  function updateNav() {
+    var y = window.scrollY + 100;
+    var cur = '';
+    ids.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && el.offsetTop <= y) cur = id;
+    });
+    navLinks.forEach(function (l) { l.classList.toggle('active', l.getAttribute('href') === '#' + cur); });
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
 
   // Contact form
   document.getElementById('contact-form').addEventListener('submit', async function (e) {
