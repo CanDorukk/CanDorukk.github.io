@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gizlilik Politikası — Dolapta Ne Var</title>
+  <meta name="description" content="Dolapta Ne Var mobil uygulaması gizlilik politikası" />
+  <style>
+    :root {
+      --bg: #faf6f0;
+      --surface: #ffffff;
+      --ink: #1f1a14;
+      --muted: #6b6255;
+      --accent: #c2560f;
+      --line: #e7ddce;
+      --max: 44rem;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 480px at 8% -10%, #f6e4cf 0%, transparent 55%),
+        radial-gradient(850px 380px at 100% 0%, #efe7d6 0%, transparent 50%),
+        var(--bg);
+      line-height: 1.65;
+    }
+    header { padding: 2.5rem 1.25rem 1.5rem; text-align: center; }
+    header h1 {
+      margin: 0 0 0.35rem;
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      letter-spacing: -0.02em;
+      color: var(--accent);
+    }
+    header p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    nav { display: flex; justify-content: center; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap; }
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.35rem 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+    }
+    main { max-width: var(--max); margin: 0 auto 3rem; padding: 0 1.25rem; }
+    section {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.5rem 1.35rem;
+      margin-bottom: 1.25rem;
+    }
+    h2 { margin: 0 0 1rem; font-size: 1.25rem; color: var(--accent); }
+    h3 { margin: 1.6rem 0 0.5rem; font-size: 1.05rem; }
+    h3:first-of-type { margin-top: 0.5rem; }
+    p, li { color: var(--ink); }
+    ul { padding-left: 1.2rem; margin: 0.4rem 0 0.8rem; }
+    li { margin: 0.3rem 0; }
+    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+    a { color: var(--accent); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.6rem 0 1rem;
+      font-size: 0.92rem;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 0.55rem 0.65rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f7efe3; font-weight: 600; }
+    .table-wrap { overflow-x: auto; }
+    footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 0 1rem 2.5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dolapta Ne Var</h1>
+    <p>Gizlilik Politikası</p>
+    <nav>
+      <a href="privacy_policy.html">Gizlilik Politikası</a>
+      <a href="terms_of_use.html">Kullanım Şartları</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <p class="meta">Son güncelleme: 10 Eylül 2026</p>
+
+      <p>
+        Bu politika, <strong>Dolapta Ne Var</strong> ("Uygulama") mobil
+        uygulamasının kişisel verilerinizi nasıl işlediğini açıklar. Veri
+        sorumlusu: <strong>Can Doruk</strong> ("biz"). İletişim:
+        <a href="mailto:semahattincandoruk@gmail.com">semahattincandoruk@gmail.com</a>.
+      </p>
+
+      <h3>1. Topladığımız veriler</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Veri</th><th>Ne zaman</th><th>Neden</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>E-posta adresi ve şifre</strong> (şifre bize şifreli/hash olarak ulaşır)</td><td>Hesap oluştururken</td><td>Kimlik doğrulama, hesabınıza erişim</td></tr>
+            <tr><td><strong>Buzdolabı malzeme listesi</strong> (ad, miktar, kategori, son kullanma tarihi)</td><td>Malzeme eklediğinizde</td><td>Uygulamanın temel işlevi; tarif üretimi</td></tr>
+            <tr><td><strong>Alışveriş listeniz</strong></td><td>Liste oluşturduğunuzda</td><td>Uygulamanın işlevi; cihazlar arası senkron</td></tr>
+            <tr><td><strong>Kaydedilen/favori tarifler</strong></td><td>Tarif ürettiğinizde</td><td>Geçmiş ve favoriler; cihazlar arası senkron</td></tr>
+            <tr><td><strong>Yapay zekâ çağrı kayıtları</strong> (gönderilen malzeme listesi, dönen tarif metni, zaman, model, token sayısı)</td><td>Tarif ürettiğinizde veya fiş taradığınızda</td><td>Maliyet takibi, kötüye kullanım önleme, hizmet kalitesi</td></tr>
+            <tr><td><strong>Fiş / ürün fotoğrafları</strong></td><td>Fotoğraf tarattığınızda</td><td>Yalnızca üründeki metni çıkarmak için işlenir — <strong>fotoğraf saklanmaz</strong>, işlem sonrası silinir</td></tr>
+            <tr><td><strong>Uygulama görünüm tercihleri</strong> (tema, bildirim ayarları)</td><td>Ayarları değiştirdiğinizde</td><td>Deneyimi kişiselleştirmek</td></tr>
+            <tr><td><strong>Cihaz reklam tanımlayıcısı</strong> (yalnızca ücretsiz sürümde, rızanızla)</td><td>Reklam gösterirken</td><td>Reklam sunumu ve ölçümü (bkz. §4)</td></tr>
+            <tr><td><strong>Çökme / hata kayıtları</strong> (etkinse)</td><td>Uygulama beklenmedik şekilde kapanırsa</td><td>Hataları düzeltmek</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Konum, rehber, arama geçmişi gibi verileri <strong>toplamıyoruz</strong>.</p>
+
+      <h3>2. Verileri nasıl kullanıyoruz</h3>
+      <ul>
+        <li>Uygulamanın çekirdek işlevini sunmak (malzeme takibi, tarif üretimi, alışveriş listesi).</li>
+        <li>Hesabınızı yönetmek ve verilerinizi cihazlarınız arasında senkronlamak.</li>
+        <li>Yapay zekâ maliyetini izlemek ve adil kullanım sınırlarını uygulamak.</li>
+        <li>Ücretsiz sürümde reklam göstermek (Pro aboneliğinde reklam yoktur).</li>
+        <li>Hataları teşhis edip düzeltmek, hizmeti geliştirmek.</li>
+      </ul>
+      <p>
+        Verilerinizi <strong>satmıyoruz</strong> ve reklam dışında pazarlama
+        amacıyla üçüncü kişilerle paylaşmıyoruz.
+      </p>
+
+      <h3>3. Yapay zekâ hakkında</h3>
+      <p>
+        Tarif üretimi ve fiş/ürün okuma <strong>Google Gemini</strong> modeli ile
+        yapılır. Malzeme listeniz (ve fiş taramada fotoğrafınız) işlenmek üzere
+        Google'a gönderilir. Google, bu verileri kendi
+        <a href="https://ai.google.dev/gemini-api/terms" rel="noopener" target="_blank">Gemini API gizlilik koşulları</a>
+        kapsamında işler. Fotoğraflar tarafımızca saklanmaz.
+      </p>
+      <p>
+        Yapay zekâ çıktıları hatalı olabilir — alerjenleri ve gıda güvenliğini
+        (pişirme sıcaklığı, tazelik) kendiniz doğrulamalısınız.
+      </p>
+
+      <h3>4. Reklamlar (yalnızca ücretsiz sürüm)</h3>
+      <p>
+        Ücretsiz sürümde <strong>Google AdMob</strong> ile reklam gösterilir.
+        Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'deki kullanıcılara,
+        ilk açılışta Google'ın rıza ekranı (UMP) gösterilir; kişiselleştirilmiş
+        reklam yalnızca rıza verirseniz gösterilir. AdMob'un veri işleme bilgisi:
+        <a href="https://support.google.com/admob/answer/6128543" rel="noopener" target="_blank">support.google.com/admob/answer/6128543</a>.
+        <strong>Pro aboneliğinde reklam ve reklam tanımlayıcısı kullanılmaz.</strong>
+      </p>
+
+      <h3>5. Abonelikler</h3>
+      <p>
+        Pro aboneliği <strong>Google Play Faturalandırma</strong> üzerinden
+        işlenir. Ödeme bilgilerinizi biz görmeyiz; yalnızca aboneliğinizin aktif
+        olup olmadığı bilgisini tutarız.
+      </p>
+
+      <h3>6. Üçüncü taraf hizmet sağlayıcılar</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Sağlayıcı</th><th>Amaç</th><th>Konum</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Supabase</strong></td><td>Kimlik doğrulama ve veritabanı barındırma</td><td>AB / ABD</td></tr>
+            <tr><td><strong>Google Gemini</strong></td><td>Tarif ve fiş yapay zekâsı</td><td>Google altyapısı</td></tr>
+            <tr><td><strong>Google AdMob</strong></td><td>Reklam (ücretsiz sürüm)</td><td>Google altyapısı</td></tr>
+            <tr><td><strong>Google Play</strong></td><td>Uygulama dağıtımı ve abonelik faturalandırma</td><td>Google altyapısı</td></tr>
+            <tr><td><strong>Sentry</strong> (etkinse)</td><td>Çökme raporlama</td><td>AB</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>7. Verilerin saklanması ve silinmesi</h3>
+      <ul>
+        <li>Verileriniz, hesabınız aktif olduğu sürece saklanır.</li>
+        <li><strong>"Hesabımı sil"</strong> dediğinizde buzdolabınız, tarifleriniz,
+          listeleriniz, yapay zekâ kayıtlarınız ve hesap bilgileriniz
+          <strong>kalıcı olarak</strong> silinir; yedeklerden de en geç 30 gün
+          içinde düşer.</li>
+        <li>Uygulamayı silmek verilerinizi sunucudan silmez — bunun için
+          "Hesabımı sil" adımını kullanın.</li>
+      </ul>
+
+      <h3>8. Haklarınız (KVKK m. 11 / GDPR)</h3>
+      <ul>
+        <li><strong>Erişim / taşınabilirlik:</strong> Profil → Gizlilik ve hesap →
+          "Verilerimi indir (JSON)" ile tüm verinizi dışa aktarabilirsiniz.</li>
+        <li><strong>Düzeltme:</strong> Verilerinizi uygulama içinden
+          düzenleyebilirsiniz.</li>
+        <li><strong>Silme:</strong> "Hesabımı sil" ile.</li>
+        <li><strong>İtiraz / rıza geri çekme:</strong> Reklam rızanızı cihaz/Google
+          ayarlarından yönetebilirsiniz.</li>
+        <li>Talepleriniz ve şikâyetleriniz için:
+          <a href="mailto:semahattincandoruk@gmail.com">semahattincandoruk@gmail.com</a>.
+          KVKK kapsamında Kişisel Verileri Koruma Kurulu'na şikâyet hakkınız
+          saklıdır.</li>
+      </ul>
+
+      <h3>9. Çocukların gizliliği</h3>
+      <p>
+        Uygulama 13 yaşın altındaki çocuklara yönelik değildir ve bilerek
+        onlardan veri toplamaz.
+      </p>
+
+      <h3>10. Güvenlik</h3>
+      <p>
+        Veriler aktarım sırasında şifrelenir (HTTPS). Sunucu tarafı erişim, satır
+        düzeyi güvenlik (RLS) ile her kullanıcıyı yalnızca kendi verisiyle
+        sınırlar. Yapay zekâ anahtarları ve sunucu sırları istemciye hiçbir zaman
+        gönderilmez.
+      </p>
+
+      <h3>11. Değişiklikler</h3>
+      <p>
+        Bu politikayı güncelleyebiliriz. Önemli değişikliklerde uygulama içinde
+        bilgilendirilirsiniz. Güncel sürüm her zaman bu adreste yayınlanır.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Can Doruk · Dolapta Ne Var
+  </footer>
+</body>
+</html>
