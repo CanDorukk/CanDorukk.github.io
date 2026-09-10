@@ -2,7 +2,7 @@
 > uygulamanın gerçek veri işleme pratiklerine göre hazırlandı. Yayınlamadan
 > önce bir hukukçuya (KVKK + GDPR) okutulmalı. `[…]` alanları doldurulmalı.
 
-# Gizlilik Politikası — Dolapta Ne Var
+# Gizlilik Politikası — Akıllı Mutfak: Dolapta Ne Var
 
 **Son güncelleme:** 10 Eylül 2026
 

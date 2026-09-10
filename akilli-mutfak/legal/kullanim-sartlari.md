@@ -1,7 +1,7 @@
 > **TASLAK — hukuki inceleme gerekli.** Yapay zekâ yardımıyla hazırlandı;
 > yayınlamadan önce bir hukukçuya okutulmalı.
 
-# Kullanım Şartları — Dolapta Ne Var
+# Kullanım Şartları — Akıllı Mutfak: Dolapta Ne Var
 
 **Son güncelleme:** 10 Eylül 2026
 
