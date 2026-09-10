@@ -19,10 +19,9 @@ verilerinizi nasıl işlediğini açıklar. Veri sorumlusu: **Can Doruk**
 | **Alışveriş listeniz** | Liste oluşturduğunuzda | Uygulamanın işlevi; cihazlar arası senkron |
 | **Kaydedilen/favori tarifler** | Tarif ürettiğinizde | Geçmiş ve favoriler; cihazlar arası senkron |
 | **Yapay zekâ çağrı kayıtları** (gönderilen malzeme listesi, dönen tarif metni, zaman, model, token sayısı) | Tarif ürettiğinizde veya fiş taradığınızda | Maliyet takibi, kötüye kullanım önleme, hizmet kalitesi |
-| **Fiş / ürün fotoğrafları** | Fotoğraf tarattığınızda | Yalnızca üründeki metni çıkarmak için işlenir — **fotoğraf saklanmaz**, işlem sonrası silinir |
+| **Fiş / ürün fotoğrafları** | Fotoğraf tarattığınızda | Fotoğraf üzerindeki metinlerin çıkarılması amacıyla geçici olarak Google Gemini API'ye iletilir; **sunucularımızda saklanmaz**, işlem tamamlandıktan hemen sonra bellekten silinir |
 | **Uygulama görünüm tercihleri** (tema, bildirim ayarları) | Ayarları değiştirdiğinizde | Deneyimi kişiselleştirmek |
 | **Cihaz reklam tanımlayıcısı** (yalnızca ücretsiz sürümde, rızanızla) | Reklam gösterirken | Reklam sunumu ve ölçümü (bkz. §4) |
-| **Çökme / hata kayıtları** (etkinse) | Uygulama beklenmedik şekilde kapanırsa | Hataları düzeltmek |
 
 Konum, rehber, arama geçmişi gibi verileri **toplamıyoruz**.
 
@@ -40,10 +39,15 @@ kişilerle paylaşmıyoruz.
 ## 3. Yapay zekâ hakkında
 
 Tarif üretimi ve fiş/ürün okuma **Google Gemini** modeli ile yapılır.
-Malzeme listeniz (ve fiş taramada fotoğrafınız) işlenmek üzere Google'a
-gönderilir. Google, bu verileri kendi
+Malzeme listeniz işlenmek üzere Google'a gönderilir. Google, bu verileri
+kendi
 [Gemini API gizlilik koşulları](https://ai.google.dev/gemini-api/terms)
-kapsamında işler. Fotoğraflar tarafımızca saklanmaz.
+kapsamında işler.
+
+Fiş veya ürün fotoğrafı tarattığınızda, fotoğraf üzerindeki metinlerin
+çıkarılması amacıyla geçici olarak Google Gemini API'ye iletilir.
+Fotoğraflar sunucularımızda saklanmaz; işlem tamamlandıktan hemen sonra
+bellekten silinir.
 
 Yapay zekâ çıktıları hatalı olabilir — alerjenleri ve gıda güvenliğini
 (pişirme sıcaklığı, tazelik) kendiniz doğrulamalısınız.
@@ -71,7 +75,6 @@ bilgisini tutarız.
 | **Google Gemini** | Tarif ve fiş yapay zekâsı | Google altyapısı |
 | **Google AdMob** | Reklam (ücretsiz sürüm) | Google altyapısı |
 | **Google Play** | Uygulama dağıtımı ve abonelik faturalandırma | Google altyapısı |
-| **Sentry** (etkinse) | Çökme raporlama | AB |
 
 ## 7. Verilerin saklanması ve silinmesi
 
@@ -97,6 +100,11 @@ bilgisini tutarız.
 
 Uygulama 13 yaşın altındaki çocuklara yönelik değildir ve bilerek onlardan
 veri toplamaz.
+
+Eğer 13 yaşından küçük bir çocuğun bize kişisel veri sağladığını fark
+ederseniz, lütfen **semahattincandoruk@gmail.com** adresinden bizimle
+iletişime geçin. Bu tür verileri derhal sistemlerimizden silmek için
+gerekli adımları atarız.
 
 ## 10. Güvenlik
 

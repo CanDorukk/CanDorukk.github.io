@@ -111,10 +111,9 @@
             <tr><td><strong>Alışveriş listeniz</strong></td><td>Liste oluşturduğunuzda</td><td>Uygulamanın işlevi; cihazlar arası senkron</td></tr>
             <tr><td><strong>Kaydedilen/favori tarifler</strong></td><td>Tarif ürettiğinizde</td><td>Geçmiş ve favoriler; cihazlar arası senkron</td></tr>
             <tr><td><strong>Yapay zekâ çağrı kayıtları</strong> (gönderilen malzeme listesi, dönen tarif metni, zaman, model, token sayısı)</td><td>Tarif ürettiğinizde veya fiş taradığınızda</td><td>Maliyet takibi, kötüye kullanım önleme, hizmet kalitesi</td></tr>
-            <tr><td><strong>Fiş / ürün fotoğrafları</strong></td><td>Fotoğraf tarattığınızda</td><td>Yalnızca üründeki metni çıkarmak için işlenir — <strong>fotoğraf saklanmaz</strong>, işlem sonrası silinir</td></tr>
+            <tr><td><strong>Fiş / ürün fotoğrafları</strong></td><td>Fotoğraf tarattığınızda</td><td>Fotoğraf üzerindeki metinlerin çıkarılması amacıyla geçici olarak Google Gemini API'ye iletilir; <strong>sunucularımızda saklanmaz</strong>, işlem tamamlandıktan hemen sonra bellekten silinir</td></tr>
             <tr><td><strong>Uygulama görünüm tercihleri</strong> (tema, bildirim ayarları)</td><td>Ayarları değiştirdiğinizde</td><td>Deneyimi kişiselleştirmek</td></tr>
             <tr><td><strong>Cihaz reklam tanımlayıcısı</strong> (yalnızca ücretsiz sürümde, rızanızla)</td><td>Reklam gösterirken</td><td>Reklam sunumu ve ölçümü (bkz. §4)</td></tr>
-            <tr><td><strong>Çökme / hata kayıtları</strong> (etkinse)</td><td>Uygulama beklenmedik şekilde kapanırsa</td><td>Hataları düzeltmek</td></tr>
           </tbody>
         </table>
       </div>
@@ -136,10 +135,16 @@
       <h3>3. Yapay zekâ hakkında</h3>
       <p>
         Tarif üretimi ve fiş/ürün okuma <strong>Google Gemini</strong> modeli ile
-        yapılır. Malzeme listeniz (ve fiş taramada fotoğrafınız) işlenmek üzere
-        Google'a gönderilir. Google, bu verileri kendi
+        yapılır. Malzeme listeniz işlenmek üzere Google'a gönderilir. Google, bu
+        verileri kendi
         <a href="https://ai.google.dev/gemini-api/terms" rel="noopener" target="_blank">Gemini API gizlilik koşulları</a>
-        kapsamında işler. Fotoğraflar tarafımızca saklanmaz.
+        kapsamında işler.
+      </p>
+      <p>
+        Fiş veya ürün fotoğrafı tarattığınızda, fotoğraf üzerindeki metinlerin
+        çıkarılması amacıyla geçici olarak Google Gemini API'ye iletilir.
+        Fotoğraflar sunucularımızda saklanmaz; işlem tamamlandıktan hemen sonra
+        bellekten silinir.
       </p>
       <p>
         Yapay zekâ çıktıları hatalı olabilir — alerjenleri ve gıda güvenliğini
@@ -174,7 +179,6 @@
             <tr><td><strong>Google Gemini</strong></td><td>Tarif ve fiş yapay zekâsı</td><td>Google altyapısı</td></tr>
             <tr><td><strong>Google AdMob</strong></td><td>Reklam (ücretsiz sürüm)</td><td>Google altyapısı</td></tr>
             <tr><td><strong>Google Play</strong></td><td>Uygulama dağıtımı ve abonelik faturalandırma</td><td>Google altyapısı</td></tr>
-            <tr><td><strong>Sentry</strong> (etkinse)</td><td>Çökme raporlama</td><td>AB</td></tr>
           </tbody>
         </table>
       </div>
@@ -209,6 +213,13 @@
       <p>
         Uygulama 13 yaşın altındaki çocuklara yönelik değildir ve bilerek
         onlardan veri toplamaz.
+      </p>
+      <p>
+        Eğer 13 yaşından küçük bir çocuğun bize kişisel veri sağladığını fark
+        ederseniz, lütfen
+        <a href="mailto:semahattincandoruk@gmail.com">semahattincandoruk@gmail.com</a>
+        adresinden bizimle iletişime geçin. Bu tür verileri derhal
+        sistemlerimizden silmek için gerekli adımları atarız.
       </p>
 
       <h3>10. Güvenlik</h3>

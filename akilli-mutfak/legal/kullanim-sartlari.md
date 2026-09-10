@@ -1,5 +1,5 @@
 > **TASLAK — hukuki inceleme gerekli.** Yapay zekâ yardımıyla hazırlandı;
-> yayınlamadan önce bir hukukçuya okutulmalı. `[…]` alanları doldurulmalı.
+> yayınlamadan önce bir hukukçuya okutulmalı.
 
 # Kullanım Şartları — Dolapta Ne Var
 
@@ -32,6 +32,11 @@ hatalı, eksik veya güvenli olmayabilir.** Bir tarifi uygulamadan önce:
   son kullanma tarihi) kendiniz doğrulayın.
 - Sağlık durumunuza uygunluğundan emin olun.
 
+Uygulama tarafından sunulan tarifler ve içerikler yalnızca bilgilendirme ve
+öneri amaçlıdır; profesyonel beslenme, diyet veya tıbbi tavsiye niteliği
+taşımaz. Özel bir sağlık durumunuz, gıda alerjiniz veya intoleransınız varsa
+bir sağlık uzmanına danışmalısınız.
+
 Yapay zekâ çıktılarına dayanarak aldığınız kararlardan doğan sonuçlardan
 sorumlu değiliz.
 
@@ -53,9 +58,9 @@ Kötüye kullanım durumunda hesabınızı askıya alabilir veya kapatabiliriz.
 - Ücretsiz sürümde reklam gösterilir ve günlük yapay zekâ kullanımı
   sınırlıdır.
 - **Pro aboneliği** Google Play üzerinden satılır; reklamları kaldırır ve
-  kullanım sınırlarını yükseltir. Otomatik yenilenir; **Google Play hesap
-  ayarlarınızdan** iptal edebilirsiniz. İadeler Google Play politikalarına
-  tabidir.
+  kullanım sınırlarını yükseltir. Otomatik yenilenir. Aboneliğinizi dilediğiniz
+  zaman **Google Play Store → Profil → Ödemeler ve Abonelikler** menüsünden
+  iptal edebilirsiniz. İadeler Google Play politikalarına tabidir.
 - Fiyatlar ve Pro kapsamı zaman içinde değişebilir; değişiklikler
   yürürlükten önce duyurulur.
 
@@ -86,7 +91,7 @@ Hesabınızı istediğiniz zaman "Hesabımı sil" ile kapatabilirsiniz. Bu
 ## 10. Uygulanacak hukuk ve uyuşmazlık
 
 Bu şartlar **Türkiye Cumhuriyeti hukukuna** tabidir. Uyuşmazlıklarda
-**[…] Mahkemeleri ve İcra Daireleri** yetkilidir.
+**Mersin Mahkemeleri ve İcra Daireleri** yetkilidir.
 
 ## 11. Değişiklikler
 
