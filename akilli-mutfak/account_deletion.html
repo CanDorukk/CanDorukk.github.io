@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hesap ve Veri Silme — Akıllı Mutfak: Dolapta Ne Var</title>
+  <meta name="description" content="Akıllı Mutfak: Dolapta Ne Var uygulamasında hesap ve veri silme" />
+  <style>
+    :root {
+      --bg: #faf6f0;
+      --surface: #ffffff;
+      --ink: #1f1a14;
+      --muted: #6b6255;
+      --accent: #c2560f;
+      --line: #e7ddce;
+      --max: 44rem;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 480px at 8% -10%, #f6e4cf 0%, transparent 55%),
+        radial-gradient(850px 380px at 100% 0%, #efe7d6 0%, transparent 50%),
+        var(--bg);
+      line-height: 1.65;
+    }
+    header { padding: 2.5rem 1.25rem 1.5rem; text-align: center; }
+    header h1 {
+      margin: 0 0 0.35rem;
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      letter-spacing: -0.02em;
+      color: var(--accent);
+    }
+    header p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    nav { display: flex; justify-content: center; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap; }
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.35rem 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+    }
+    main { max-width: var(--max); margin: 0 auto 3rem; padding: 0 1.25rem; }
+    section {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.5rem 1.35rem;
+      margin-bottom: 1.25rem;
+    }
+    h3 { margin: 1.6rem 0 0.5rem; font-size: 1.05rem; }
+    h3:first-of-type { margin-top: 0.5rem; }
+    p, li { color: var(--ink); }
+    ol, ul { padding-left: 1.2rem; margin: 0.4rem 0 0.8rem; }
+    li { margin: 0.3rem 0; }
+    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+    a { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1rem; font-size: 0.92rem; }
+    th, td { border: 1px solid var(--line); padding: 0.55rem 0.65rem; text-align: left; vertical-align: top; }
+    th { background: #f7efe3; font-weight: 600; }
+    footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 0 1rem 2.5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Akıllı Mutfak: Dolapta Ne Var</h1>
+    <p>Hesap ve Veri Silme</p>
+    <nav>
+      <a href="privacy_policy.html">Gizlilik Politikası</a>
+      <a href="terms_of_use.html">Kullanım Şartları</a>
+      <a href="account_deletion.html">Hesap Silme</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <p class="meta">Son güncelleme: 10 Eylül 2026</p>
+
+      <p>
+        Bu sayfa, <strong>Akıllı Mutfak: Dolapta Ne Var</strong> uygulamasında
+        (geliştirici: <strong>Can Doruk</strong>) hesabınızı ve ilişkili
+        verilerinizi nasıl sileceğinizi açıklar.
+      </p>
+
+      <h3>Uygulama içinden silme</h3>
+      <ol>
+        <li>Uygulamayı açın ve hesabınızla giriş yapın.</li>
+        <li><strong>Profil</strong> sekmesine gidin.</li>
+        <li><strong>Gizlilik ve hesap</strong> seçeneğine dokunun.</li>
+        <li>Sayfanın altındaki <strong>Hesabımı sil</strong> düğmesine dokunun ve
+          onay penceresinde işlemi onaylayın.</li>
+      </ol>
+      <p>Onay verdiğiniz anda hesabınız ve verileriniz sunucudan silinir.</p>
+
+      <h3>Uygulamaya erişemiyorsanız</h3>
+      <p>
+        Hesabınıza kayıtlı e-posta adresinden
+        <a href="mailto:semahattincandoruk@gmail.com">semahattincandoruk@gmail.com</a>
+        adresine "hesap silme talebi" konulu bir e-posta gönderin. Talebiniz en
+        geç 30 gün içinde yerine getirilir.
+      </p>
+
+      <h3>Silinen veriler</h3>
+      <table>
+        <thead><tr><th>Veri</th><th>Ne olur</th></tr></thead>
+        <tbody>
+          <tr><td>Hesap bilgileri (e-posta adresi, kimlik doğrulama kaydı)</td><td>Kalıcı olarak silinir</td></tr>
+          <tr><td>Buzdolabı malzeme listesi</td><td>Kalıcı olarak silinir</td></tr>
+          <tr><td>Alışveriş listesi</td><td>Kalıcı olarak silinir</td></tr>
+          <tr><td>Kaydedilen ve favori tarifler</td><td>Kalıcı olarak silinir</td></tr>
+          <tr><td>Yapay zekâ çağrı kayıtları (gönderilen malzeme listesi, dönen tarif metni, zaman, model)</td><td>Kalıcı olarak silinir</td></tr>
+          <tr><td>Fiş / ürün fotoğrafları</td><td>Zaten saklanmaz — tarama sırasında geçici olarak işlenir ve hemen silinir</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Saklanan veriler ve saklama süreleri</h3>
+      <ul>
+        <li>Silme işleminden sonra hiçbir kişisel veriniz saklanmaz.</li>
+        <li>Şifreli sistem yedeklerinde kalan kopyalar, yedek rotasyonuyla
+          birlikte <strong>en geç 30 gün içinde</strong> tamamen silinir.</li>
+        <li>Yürürlükteki hukukun zorunlu kıldığı istisnai durumlar dışında
+          hiçbir veri daha uzun süre tutulmaz.</li>
+      </ul>
+
+      <h3>Verilerinizi silmeden önce indirmek</h3>
+      <p>
+        Hesabınızı silmeden önce tüm verilerinizi JSON dosyası olarak dışa
+        aktarabilirsiniz: <strong>Profil → Gizlilik ve hesap → "Verilerimi indir
+        (JSON)"</strong>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Can Doruk · Akıllı Mutfak: Dolapta Ne Var
+  </footer>
+</body>
+</html>
