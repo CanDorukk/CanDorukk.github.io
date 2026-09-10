@@ -115,10 +115,16 @@
             <tr><td><strong>Fiş / ürün fotoğrafları</strong></td><td>Fotoğraf tarattığınızda</td><td>Fotoğraf üzerindeki metinlerin çıkarılması amacıyla geçici olarak Google Gemini API'ye iletilir; <strong>sunucularımızda saklanmaz</strong>, işlem tamamlandıktan hemen sonra bellekten silinir</td></tr>
             <tr><td><strong>Uygulama görünüm tercihleri</strong> (tema, bildirim ayarları)</td><td>Ayarları değiştirdiğinizde</td><td>Deneyimi kişiselleştirmek</td></tr>
             <tr><td><strong>Cihaz reklam tanımlayıcısı</strong> (yalnızca ücretsiz sürümde, rızanızla)</td><td>Reklam gösterirken</td><td>Reklam sunumu ve ölçümü (bkz. §4)</td></tr>
+            <tr><td><strong>Yaklaşık konum</strong> (IP adresinizden türetilir; yalnızca ücretsiz sürüm)</td><td>Reklam gösterirken</td><td>Google AdMob SDK'sı tarafından reklam sunumu ve yerel reklam hedeflemesi için işlenir (bkz. §4)</td></tr>
           </tbody>
         </table>
       </div>
-      <p>Konum, rehber, arama geçmişi gibi verileri <strong>toplamıyoruz</strong>.</p>
+      <p>
+        Cihazın <strong>hassas GPS konumunu</strong>, rehberinizi veya arama
+        geçmişinizi <strong>toplamıyoruz</strong>. Ücretsiz sürümde, aşağıdaki
+        §4'te açıklandığı gibi Google AdMob SDK'sı IP adresinizden türetilen
+        yaklaşık konumu işleyebilir.
+      </p>
 
       <h3>2. Verileri nasıl kullanıyoruz</h3>
       <ul>
@@ -160,6 +166,13 @@
         reklam yalnızca rıza verirseniz gösterilir. AdMob'un veri işleme bilgisi:
         <a href="https://support.google.com/admob/answer/6128543" rel="noopener" target="_blank">support.google.com/admob/answer/6128543</a>.
         <strong>Pro aboneliğinde reklam ve reklam tanımlayıcısı kullanılmaz.</strong>
+      </p>
+      <p>
+        Uygulamamız cihazın hassas GPS konumunu toplamaz. Ancak ücretsiz sürümde
+        kullanılan Google AdMob SDK'sı, reklam sunumu ve yerel reklam hedeflemesi
+        amacıyla IP adresinizden türetilen <strong>yaklaşık konum</strong>
+        verisini işleyebilir ve bu veri Google ile paylaşılır. Bu işleme, rıza
+        ekranı (UMP) ve cihaz/Google reklam ayarlarınız üzerinden yönetilir.
       </p>
 
       <h3>5. Abonelikler</h3>

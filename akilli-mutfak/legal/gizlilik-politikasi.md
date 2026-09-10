@@ -22,8 +22,11 @@ verilerinizi nasıl işlediğini açıklar. Veri sorumlusu: **Can Doruk**
 | **Fiş / ürün fotoğrafları** | Fotoğraf tarattığınızda | Fotoğraf üzerindeki metinlerin çıkarılması amacıyla geçici olarak Google Gemini API'ye iletilir; **sunucularımızda saklanmaz**, işlem tamamlandıktan hemen sonra bellekten silinir |
 | **Uygulama görünüm tercihleri** (tema, bildirim ayarları) | Ayarları değiştirdiğinizde | Deneyimi kişiselleştirmek |
 | **Cihaz reklam tanımlayıcısı** (yalnızca ücretsiz sürümde, rızanızla) | Reklam gösterirken | Reklam sunumu ve ölçümü (bkz. §4) |
+| **Yaklaşık konum** (IP adresinizden türetilir; yalnızca ücretsiz sürüm) | Reklam gösterirken | Google AdMob SDK'sı tarafından reklam sunumu ve yerel reklam hedeflemesi için işlenir (bkz. §4) |
 
-Konum, rehber, arama geçmişi gibi verileri **toplamıyoruz**.
+Cihazın **hassas GPS konumunu**, rehberinizi veya arama geçmişinizi
+**toplamıyoruz**. Ücretsiz sürümde, aşağıdaki §4'te açıklandığı gibi Google
+AdMob SDK'sı IP adresinizden türetilen yaklaşık konumu işleyebilir.
 
 ## 2. Verileri nasıl kullanıyoruz
 
@@ -60,6 +63,12 @@ rıza ekranı (UMP) gösterilir; kişiselleştirilmiş reklam yalnızca rıza
 verirseniz gösterilir. AdMob'un veri işleme bilgisi:
 <https://support.google.com/admob/answer/6128543>. **Pro aboneliğinde
 reklam ve reklam tanımlayıcısı kullanılmaz.**
+
+Uygulamamız cihazın hassas GPS konumunu toplamaz. Ancak ücretsiz sürümde
+kullanılan Google AdMob SDK'sı, reklam sunumu ve yerel reklam hedeflemesi
+amacıyla IP adresinizden türetilen **yaklaşık konum** verisini işleyebilir
+ve bu veri Google ile paylaşılır. Bu işleme, rıza ekranı (UMP) ve
+cihaz/Google reklam ayarlarınız üzerinden yönetilir.
 
 ## 5. Abonelikler
 
