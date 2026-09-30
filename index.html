@@ -304,7 +304,7 @@ tailwind.config = {
   <!-- Stats marquee -->
   <div class="marquee text-sm text-muted py-3">
     <div class="marquee-track kicker">
-      <span class="px-6" data-i18n="marquee.1">9+ Projects</span>
+      <span class="px-6" data-i18n="marquee.1">10+ Projects</span>
       <span class="px-6 text-accent">/</span>
       <span class="px-6" data-i18n="marquee.2">5 Roles &amp; internships</span>
       <span class="px-6 text-accent">/</span>
@@ -314,7 +314,7 @@ tailwind.config = {
       <span class="px-6 text-accent">/</span>
       <span class="px-6" data-i18n="marquee.5">Erasmus+ — Portugal, Spring 2026</span>
       <span class="px-6 text-accent">/</span>
-      <span class="px-6" data-i18n="marquee.1">9+ Projects</span>
+      <span class="px-6" data-i18n="marquee.1">10+ Projects</span>
       <span class="px-6 text-accent">/</span>
       <span class="px-6" data-i18n="marquee.2">5 Roles &amp; internships</span>
       <span class="px-6 text-accent">/</span>
@@ -418,7 +418,7 @@ tailwind.config = {
     <div class="mb-8">
       <div class="flex items-baseline justify-between">
         <h2 class="font-display font-medium text-3xl md:text-4xl tracking-tight reveal" data-i18n="work.title">Projects</h2>
-        <span class="text-sm text-muted"><span id="work-count">9</span> <span data-i18n="work.unit">projects</span></span>
+        <span class="text-sm text-muted"><span id="work-count">10</span> <span data-i18n="work.unit">projects</span></span>
       </div>
       <div class="mt-5 flex flex-wrap gap-2" id="work-filters" role="group" aria-label="Filter projects">
         <button type="button" class="filter-btn active" data-filter="all" data-i18n="filter.all">All</button>
@@ -429,6 +429,22 @@ tailwind.config = {
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <a href="https://akkayalar.net" target="_blank" rel="noopener noreferrer" data-cat="web" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal bg-surface">
+        <div class="aspect-video overflow-hidden bg-bg">
+          <img class="w-full h-full object-cover" alt="Akkayalar A.Ş. website" src="assets/img/projects/akkayalar.jpg" loading="lazy"/>
+        </div>
+        <div class="p-5 flex flex-col flex-grow">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Akkayalar A.Ş.</h3>
+            <span class="material-symbols-outlined text-[18px] text-muted">arrow_outward</span>
+          </div>
+          <p class="text-sm text-muted mt-2 flex-grow" data-i18n="p.akkayalar">A full corporate CMS and website for a holding company, built with a complete admin panel — news, documents, board members, org chart, committees, a media library, role-based user management, an audit log, and a maintenance mode.</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Prisma</span><span class="chip">PostgreSQL</span><span class="chip">Tailwind</span><span class="chip">NextAuth</span>
+          </div>
+        </div>
+      </a>
 
       <a href="https://zatu.com.tr" target="_blank" rel="noopener noreferrer" data-cat="web" class="card border border-line rounded-xl overflow-hidden flex flex-col reveal bg-surface">
         <div class="aspect-video overflow-hidden bg-bg">

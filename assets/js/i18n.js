@@ -11,7 +11,7 @@ window.SCD_I18N = {
 
     "hero.scroll": "Scroll to start the story",
 
-    "marquee.1": "9+ Projects",
+    "marquee.1": "10+ Projects",
     "marquee.2": "5 Roles & internships",
     "marquee.3": "Mobile · Desktop · Embedded · Web",
     "marquee.4": "English C1",
@@ -73,6 +73,7 @@ window.SCD_I18N = {
     "ver.new": "— latest",
     "ver.current": "— this version",
     "ver.old": "— previous site",
+    "p.akkayalar": "A full corporate CMS and website for a holding company, built with a complete admin panel — news, documents, board members, org chart, committees, a media library, role-based user management, an audit log, and a maintenance mode.",
     "p.zatu": "The public site for ZATU, an earthquake-preparedness mobile app made with the AFKOR disaster-coordination NGO. It introduces the app, explains how it helps people stay safe and reach their family during a disaster, answers common questions, and links out to the App Store and Google Play.",
     "p.afkor": "The corporate website for a national disaster-coordination NGO — introducing the organization's mission and work, its projects, a press and media area, and volunteer and donation sections.",
     "p.habitly": "A habit and routine tracker with built-in alarms. Set daily goals for things like water, coffee, or medication, keep your streaks going, and get smart or interval reminders with custom alarm sounds and quiet hours. Detailed analytics show your progress over time. Published on Google Play.",
@@ -138,7 +139,7 @@ window.SCD_I18N = {
 
     "hero.scroll": "Hikayeyi başlatmak için kaydır",
 
-    "marquee.1": "9+ Proje",
+    "marquee.1": "10+ Proje",
     "marquee.2": "5 Rol & staj",
     "marquee.3": "Mobil · Masaüstü · Gömülü · Web",
     "marquee.4": "İngilizce C1",
@@ -200,6 +201,7 @@ window.SCD_I18N = {
     "ver.new": "— güncel",
     "ver.current": "— bu sürüm",
     "ver.old": "— eski site",
+    "p.akkayalar": "Bir holding şirketi için tam admin panelli kurumsal CMS ve web sitesi — haberler, dokümanlar, yönetim kurulu, organizasyon şeması, komiteler, medya kütüphanesi, rol bazlı kullanıcı yönetimi, işlem kayıtları (audit log) ve bakım modu içeriyor.",
     "p.zatu": "AFKOR afet koordinasyon derneği iş birliğiyle geliştirilen deprem hazırlık uygulaması ZATU'nun tanıtım sitesi. Uygulamayı tanıtıyor; afet anında insanların güvende kalmasına ve ailesine ulaşmasına nasıl yardımcı olduğunu anlatıyor, sık sorulan soruları yanıtlıyor ve App Store ile Google Play'e yönlendiriyor.",
     "p.afkor": "Ulusal bir afet koordinasyon derneğinin kurumsal web sitesi — derneğin misyonunu ve çalışmalarını, projelerini, basın–medya alanını, gönüllülük ve bağış bölümlerini tanıtıyor.",
     "p.habitly": "Alarm özellikli alışkanlık ve rutin takip uygulaması. Su, kahve, ilaç gibi alışkanlıklara günlük hedef koy, serilerini sürdür; özel alarm sesleri ve sessiz saatlerle akıllı veya aralıklı hatırlatmalar al. Detaylı analizler ilerlemeni zaman içinde gösterir. Google Play'de yayında.",
