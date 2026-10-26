@@ -137,6 +137,7 @@ tailwind.config = {
   #chapter-rail .rail-line { width: 1px; height: 34px; background: var(--line); margin: -8px auto; }
   /* Üzerine gelince numaranın yanından kayarak açılan bölüm adı */
   #chapter-rail li { position: relative; }
+  #chapter-rail:hover { padding-right: 150px; }
   #chapter-rail .rail-label {
     position: absolute; left: 38px; top: 50%;
     font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .04em; white-space: nowrap;
@@ -151,12 +152,16 @@ tailwind.config = {
     content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 8px; border-radius: 9999px;
     background: var(--accent); vertical-align: 1px; transform: scale(0); transition: transform .3s ease .12s;
   }
-  #chapter-rail li:hover .rail-label,
-  #chapter-rail button:focus-visible + .rail-label {
+  #chapter-rail:hover .rail-label,
+  #chapter-rail:focus-within .rail-label {
     opacity: 1; transform: translate(0, -50%); clip-path: inset(0 0 0 0 round 9999px);
+    transition-delay: calc(var(--i, 0) * 45ms);
   }
-  #chapter-rail li:hover .rail-label::before,
-  #chapter-rail button:focus-visible + .rail-label::before { transform: scale(1); }
+  #chapter-rail:hover .rail-label::before,
+  #chapter-rail:focus-within .rail-label::before { transform: scale(1); transition-delay: calc(var(--i, 0) * 45ms + .12s); }
+  /* Üzerinde durulan bölüm ve şu an bulunulan bölüm belirgin */
+  #chapter-rail li:hover .rail-label { border-color: var(--accent); }
+  #chapter-rail button.active + .rail-label { color: var(--accent); }
 
   /* Scroll progress */
   #scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: var(--accent); z-index: 60; width: 0%; }
@@ -212,17 +217,17 @@ tailwind.config = {
 <!-- Chapter rail (desktop only) -->
 <nav id="chapter-rail" aria-label="Chapters">
   <ol>
-    <li><button type="button" data-rail="top" aria-label="Intro">00</button><span class="rail-label" aria-hidden="true" data-i18n="rail.intro">Intro</span></li>
+    <li><button type="button" data-rail="top" aria-label="About">00</button><span class="rail-label" aria-hidden="true" style="--i:0" data-i18n="nav.about">About</span></li>
     <li class="rail-line"></li>
-    <li><button type="button" data-rail="story" aria-label="Background">01</button><span class="rail-label" aria-hidden="true" data-i18n="nav.story">Background</span></li>
+    <li><button type="button" data-rail="story" aria-label="Background">01</button><span class="rail-label" aria-hidden="true" style="--i:1" data-i18n="nav.story">Background</span></li>
     <li class="rail-line"></li>
-    <li><button type="button" data-rail="craft" aria-label="Skills">02</button><span class="rail-label" aria-hidden="true" data-i18n="nav.craft">Skills</span></li>
+    <li><button type="button" data-rail="craft" aria-label="Skills">02</button><span class="rail-label" aria-hidden="true" style="--i:2" data-i18n="nav.craft">Skills</span></li>
     <li class="rail-line"></li>
-    <li><button type="button" data-rail="work" aria-label="Projects">03</button><span class="rail-label" aria-hidden="true" data-i18n="work.title">Projects</span></li>
+    <li><button type="button" data-rail="work" aria-label="Projects">03</button><span class="rail-label" aria-hidden="true" style="--i:3" data-i18n="work.title">Projects</span></li>
     <li class="rail-line"></li>
-    <li><button type="button" data-rail="journey" aria-label="Experience">04</button><span class="rail-label" aria-hidden="true" data-i18n="nav.journey">Experience</span></li>
+    <li><button type="button" data-rail="journey" aria-label="Experience">04</button><span class="rail-label" aria-hidden="true" style="--i:4" data-i18n="nav.journey">Experience</span></li>
     <li class="rail-line"></li>
-    <li><button type="button" data-rail="contact" aria-label="Contact">05</button><span class="rail-label" aria-hidden="true" data-i18n="nav.contact">Contact</span></li>
+    <li><button type="button" data-rail="contact" aria-label="Contact">05</button><span class="rail-label" aria-hidden="true" style="--i:5" data-i18n="nav.contact">Contact</span></li>
   </ol>
 </nav>
 
@@ -511,7 +516,7 @@ tailwind.config = {
             <h3 class="font-semibold">ZATU <span data-i18n="p.zatuMobileTitle">Mobile App</span></h3>
             <span class="text-[11px] font-mono text-muted border border-line rounded-full px-2 py-0.5" data-i18n="badge.dev">In development</span>
           </div>
-          <p class="text-sm text-muted mt-2 flex-grow" data-i18n="p.zatuMobile">Mobile app for ZATU, an earthquake-safety project with the AFKOR disaster-coordination NGO. A 2-second hold alerts trusted contacts, who follow the live status and shared location. Includes mutual contacts, photo damage reports, offline preparedness guides and evacuation info — backed by an ASP.NET Core API and an MFA-protected React admin panel.</p>
+          <p class="text-sm text-muted mt-2 flex-grow" data-i18n="p.zatuMobile">Earthquake and disaster-safety mobile app that I designed and built end to end — from product definition and UI/UX design to the system architecture. Developed emergency alerts to trusted contacts, a mutual contact network, live location sharing, photo damage reporting, offline preparedness guides, and cross-device sync. The backend runs on ASP.NET Core with PostgreSQL/PostGIS, alongside a React admin panel with MFA, role-based access, and audit logging — covered by integration tests, CI, and load tests.</p>
           <div class="flex flex-wrap gap-2 mt-4">
             <span class="chip">Flutter</span><span class="chip">Riverpod</span><span class="chip">ASP.NET Core</span><span class="chip">PostgreSQL</span><span class="chip">PostGIS</span><span class="chip">React</span><span class="chip">Docker</span>
           </div>

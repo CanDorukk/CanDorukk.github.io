@@ -6,7 +6,6 @@ window.SCD_I18N = {
     "nav.contact": "Contact",
     "nav.resume": "Résumé",
     "nav.story": "Background",
-    "rail.intro": "Intro",
     "nav.craft": "Skills",
     "nav.journey": "Experience",
 
@@ -79,7 +78,7 @@ window.SCD_I18N = {
     "p.zatu": "The public site for ZATU, an earthquake-preparedness mobile app made with the AFKOR disaster-coordination NGO. It introduces the app, explains how it helps people stay safe and reach their family during a disaster, answers common questions, and links out to the App Store and Google Play.",
     "p.afkor": "The corporate website for a national disaster-coordination NGO — introducing the organization's mission and work, its projects, a press and media area, and volunteer and donation sections.",
     "p.zatuMobileTitle": "Mobile App",
-    "p.zatuMobile": "Mobile app for ZATU, an earthquake-safety project with the AFKOR disaster-coordination NGO. A 2-second hold alerts trusted contacts, who follow the live status and shared location. Includes mutual contacts, photo damage reports, offline preparedness guides and evacuation info — backed by an ASP.NET Core API and an MFA-protected React admin panel.",
+    "p.zatuMobile": "Earthquake and disaster-safety mobile app that I designed and built end to end — from product definition and UI/UX design to the system architecture. Developed emergency alerts to trusted contacts, a mutual contact network, live location sharing, photo damage reporting, offline preparedness guides, and cross-device sync. The backend runs on ASP.NET Core with PostgreSQL/PostGIS, alongside a React admin panel with MFA, role-based access, and audit logging — covered by integration tests, CI, and load tests.",
     "p.habitly": "A habit and routine tracker with built-in alarms. Set daily goals for things like water, coffee, or medication, keep your streaks going, and get smart or interval reminders with custom alarm sounds and quiet hours. Detailed analytics show your progress over time. Published on Google Play.",
     "p.quizarea": "A playful app for learning English vocabulary through quizzes, with progress tracking and personal accounts.",
     "p.agromora": "A mobile shopping app with separate experiences for buyers and sellers.",
@@ -138,7 +137,6 @@ window.SCD_I18N = {
     "nav.contact": "İletişim",
     "nav.resume": "Özgeçmiş",
     "nav.story": "Geçmiş",
-    "rail.intro": "Giriş",
     "nav.craft": "Yetkinlikler",
     "nav.journey": "Deneyim",
 
@@ -211,7 +209,7 @@ window.SCD_I18N = {
     "p.zatu": "AFKOR afet koordinasyon derneği iş birliğiyle geliştirilen deprem hazırlık uygulaması ZATU'nun tanıtım sitesi. Uygulamayı tanıtıyor; afet anında insanların güvende kalmasına ve ailesine ulaşmasına nasıl yardımcı olduğunu anlatıyor, sık sorulan soruları yanıtlıyor ve App Store ile Google Play'e yönlendiriyor.",
     "p.afkor": "Ulusal bir afet koordinasyon derneğinin kurumsal web sitesi — derneğin misyonunu ve çalışmalarını, projelerini, basın–medya alanını, gönüllülük ve bağış bölümlerini tanıtıyor.",
     "p.zatuMobileTitle": "Mobil Uygulama",
-    "p.zatuMobile": "AFKOR afet koordinasyon derneğiyle yürütülen deprem güvenliği projesi ZATU'nun mobil uygulaması. 2 saniye basılı tutunca yakınlara haber gider; yakınlar durumu ve paylaşılan konumu canlı izler. Karşılıklı yakın ağı, fotoğraflı hasar bildirimi, çevrimdışı hazırlık rehberleri ve tahliye bilgileri içerir; arkasında ASP.NET Core API ve MFA korumalı React yönetim paneli var.",
+    "p.zatuMobile": "Ürün kurgusundan UI/UX tasarımına ve sistem mimarisine kadar baştan sona tasarlayıp geliştirdiğim deprem ve afet güvenliği mobil uygulaması. Yakınlara acil durum bildirimi, karşılıklı yakın ağı, canlı konum paylaşımı, fotoğraflı hasar bildirimi, çevrimdışı hazırlık rehberleri ve cihazlar arası senkronizasyon geliştirildi. Backend ASP.NET Core ve PostgreSQL/PostGIS üzerinde çalışıyor; MFA, rol tabanlı yetkilendirme ve denetim kaydı içeren React yönetim paneliyle birlikte entegrasyon testleri, CI ve yük testleriyle doğrulandı.",
     "p.habitly": "Alarm özellikli alışkanlık ve rutin takip uygulaması. Su, kahve, ilaç gibi alışkanlıklara günlük hedef koy, serilerini sürdür; özel alarm sesleri ve sessiz saatlerle akıllı veya aralıklı hatırlatmalar al. Detaylı analizler ilerlemeni zaman içinde gösterir. Google Play'de yayında.",
     "p.quizarea": "Testlerle İngilizce kelime öğrenmeyi eğlenceli hale getiren; ilerleme takibi ve kişisel hesap sunan bir uygulama.",
     "p.agromora": "Alıcı ve satıcı için ayrı deneyimler sunan bir mobil alışveriş uygulaması.",
