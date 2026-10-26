@@ -6,6 +6,7 @@ window.SCD_I18N = {
     "nav.contact": "Contact",
     "nav.resume": "Résumé",
     "nav.story": "Background",
+    "rail.intro": "Intro",
     "nav.craft": "Skills",
     "nav.journey": "Experience",
 
@@ -137,6 +138,7 @@ window.SCD_I18N = {
     "nav.contact": "İletişim",
     "nav.resume": "Özgeçmiş",
     "nav.story": "Geçmiş",
+    "rail.intro": "Giriş",
     "nav.craft": "Yetkinlikler",
     "nav.journey": "Deneyim",
 
